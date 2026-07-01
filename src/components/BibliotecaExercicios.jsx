@@ -20,6 +20,9 @@ export default function BibliotecaExercicios({ onEscolher }) {
     })
   }, [busca, grupo])
 
+  const LIMITE = 80
+  const visiveis = filtrados.slice(0, LIMITE)
+
   return (
     <div className="biblioteca">
       <input
@@ -44,7 +47,7 @@ export default function BibliotecaExercicios({ onEscolher }) {
       </div>
 
       <ul className="biblioteca__lista">
-        {filtrados.map((e) => (
+        {visiveis.map((e) => (
           <li key={e.id}>
             <button type="button" onClick={() => onEscolher(e)}>
               <img src={e.imagem} alt={e.nome} loading="lazy" />
@@ -55,6 +58,11 @@ export default function BibliotecaExercicios({ onEscolher }) {
         ))}
         {filtrados.length === 0 && (
           <li className="biblioteca__vazio">Nenhum exercício encontrado.</li>
+        )}
+        {filtrados.length > LIMITE && (
+          <li className="biblioteca__vazio">
+            Mostrando {LIMITE} de {filtrados.length}. Refine a busca ou filtre por grupo. 🔍
+          </li>
         )}
       </ul>
     </div>
