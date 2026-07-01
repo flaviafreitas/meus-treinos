@@ -325,6 +325,93 @@ input, textarea {
   label { cursor: pointer; }
 }
 
+/* ---------- Biblioteca de exercícios ---------- */
+.alternar-modo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+
+  &__ou { font-size: 12px; color: $texto-fraco; }
+  .btn.is-active {
+    border-color: $primaria;
+    color: $primaria;
+  }
+}
+
+.biblioteca {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: $fundo;
+  border: 1px solid $borda;
+  border-radius: $raio-sm;
+  padding: 10px;
+
+  &__busca {
+    background: $fundo-2;
+    border: 1px solid $borda;
+    border-radius: 8px;
+    color: $texto;
+    padding: 10px 12px;
+    outline: none;
+    &:focus { border-color: $primaria; }
+  }
+
+  &__grupos {
+    display: flex;
+    gap: 6px;
+    overflow-x: auto;
+    padding-bottom: 2px;
+
+    button {
+      flex: 0 0 auto;
+      border: 1px solid $borda;
+      background: $fundo-2;
+      color: $texto-fraco;
+      border-radius: 999px;
+      padding: 6px 12px;
+      font-size: 13px;
+      &.is-active { background: $primaria; color: #04252b; border-color: $primaria; font-weight: 700; }
+    }
+  }
+
+  &__lista {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    max-height: 320px;
+    overflow-y: auto;
+
+    button {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      background: $fundo-2;
+      border: 1px solid $borda;
+      border-radius: $raio-sm;
+      padding: 6px;
+      text-align: left;
+      color: $texto;
+
+      img {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        border-radius: 8px;
+        background: $fundo-3;
+      }
+    }
+  }
+  &__nome { font-size: 13px; font-weight: 600; line-height: 1.2; margin-top: 4px; }
+  &__grupo { font-size: 11px; color: $texto-fraco; }
+  &__vazio { grid-column: 1 / -1; text-align: center; color: $texto-fraco; padding: 20px; font-size: 14px; }
+}
+
 /* ---------- Modal ---------- */
 .modal {
   position: fixed;

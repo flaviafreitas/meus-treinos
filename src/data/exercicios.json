@@ -1,0 +1,356 @@
+[
+  {
+    "id": "Barbell_Bench_Press_-_Medium_Grip",
+    "nome": "Supino reto com barra",
+    "grupo": "Peito",
+    "imagem": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Barbell_Bench_Press_-_Medium_Grip/0.jpg"
+  },
+  {
+    "id": "Dumbbell_Bench_Press",
+    "nome": "Supino reto com halteres",
+    "grupo": "Peito",
+    "imagem": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Dumbbell_Bench_Press/0.jpg"
+  },
+  {
+    "id": "Barbell_Incline_Bench_Press_-_Medium_Grip",
+    "nome": "Supino inclinado com barra",
+    "grupo": "Peito",
+    "imagem": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Barbell_Incline_Bench_Press_-_Medium_Grip/0.jpg"
+  },
+  {
+    "id": "Decline_Dumbbell_Bench_Press",
+    "nome": "Supino declinado com halteres",
+    "grupo": "Peito",
+    "imagem": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Decline_Dumbbell_Bench_Press/0.jpg"
+  },
+  {
+    "id": "Dumbbell_Flyes",
+    "nome": "Crucifixo com halteres",
+    "grupo": "Peito",
+    "imagem": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Dumbbell_Flyes/0.jpg"
+  },
+  {
+    "id": "Butterfly",
+    "nome": "Voador (peck deck)",
+    "grupo": "Peito",
+    "imagem": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Butterfly/0.jpg"
+  },
+  {
+    "id": "Dips_-_Chest_Version",
+    "nome": "Mergulho nas paralelas (peito)",
+    "grupo": "Peito",
+    "imagem": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Dips_-_Chest_Version/0.jpg"
+  },
+  {
+    "id": "Pushups",
+    "nome": "Flexão de braço",
+    "grupo": "Peito",
+    "imagem": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Pushups/0.jpg"
+  },
+  {
+    "id": "Machine_Bench_Press",
+    "nome": "Supino na máquina",
+    "grupo": "Peito",
+    "imagem": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Machine_Bench_Press/0.jpg"
+  },
+  {
+    "id": "Barbell_Deadlift",
+    "nome": "Levantamento terra",
+    "grupo": "Costas",
+    "imagem": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Barbell_Deadlift/0.jpg"
+  },
+  {
+    "id": "Bent_Over_Barbell_Row",
+    "nome": "Remada curvada com barra",
+    "grupo": "Costas",
+    "imagem": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Bent_Over_Barbell_Row/0.jpg"
+  },
+  {
+    "id": "Bent_Over_Two-Dumbbell_Row",
+    "nome": "Remada curvada com halteres",
+    "grupo": "Costas",
+    "imagem": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Bent_Over_Two-Dumbbell_Row/0.jpg"
+  },
+  {
+    "id": "Wide-Grip_Lat_Pulldown",
+    "nome": "Puxada frontal (pegada aberta)",
+    "grupo": "Costas",
+    "imagem": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Wide-Grip_Lat_Pulldown/0.jpg"
+  },
+  {
+    "id": "Close-Grip_Front_Lat_Pulldown",
+    "nome": "Puxada frontal (pegada fechada)",
+    "grupo": "Costas",
+    "imagem": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Close-Grip_Front_Lat_Pulldown/0.jpg"
+  },
+  {
+    "id": "Seated_Cable_Rows",
+    "nome": "Remada baixa (cabo)",
+    "grupo": "Costas",
+    "imagem": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Seated_Cable_Rows/0.jpg"
+  },
+  {
+    "id": "Chin-Up",
+    "nome": "Barra fixa (pegada supinada)",
+    "grupo": "Costas",
+    "imagem": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Chin-Up/0.jpg"
+  },
+  {
+    "id": "Wide-Grip_Rear_Pull-Up",
+    "nome": "Barra fixa (pegada aberta)",
+    "grupo": "Costas",
+    "imagem": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Wide-Grip_Rear_Pull-Up/0.jpg"
+  },
+  {
+    "id": "Band_Assisted_Pull-Up",
+    "nome": "Barra fixa assistida",
+    "grupo": "Costas",
+    "imagem": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Band_Assisted_Pull-Up/0.jpg"
+  },
+  {
+    "id": "Barbell_Squat",
+    "nome": "Agachamento livre",
+    "grupo": "Pernas",
+    "imagem": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Barbell_Squat/0.jpg"
+  },
+  {
+    "id": "Barbell_Full_Squat",
+    "nome": "Agachamento profundo",
+    "grupo": "Pernas",
+    "imagem": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Barbell_Full_Squat/0.jpg"
+  },
+  {
+    "id": "Bodyweight_Squat",
+    "nome": "Agachamento (peso corporal)",
+    "grupo": "Pernas",
+    "imagem": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Bodyweight_Squat/0.jpg"
+  },
+  {
+    "id": "Leg_Press",
+    "nome": "Leg press",
+    "grupo": "Pernas",
+    "imagem": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Leg_Press/0.jpg"
+  },
+  {
+    "id": "Leg_Extensions",
+    "nome": "Cadeira extensora",
+    "grupo": "Pernas",
+    "imagem": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Leg_Extensions/0.jpg"
+  },
+  {
+    "id": "Lying_Leg_Curls",
+    "nome": "Mesa flexora",
+    "grupo": "Pernas",
+    "imagem": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Lying_Leg_Curls/0.jpg"
+  },
+  {
+    "id": "Seated_Leg_Curl",
+    "nome": "Cadeira flexora",
+    "grupo": "Pernas",
+    "imagem": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Seated_Leg_Curl/0.jpg"
+  },
+  {
+    "id": "Romanian_Deadlift",
+    "nome": "Levantamento terra romeno (stiff)",
+    "grupo": "Pernas",
+    "imagem": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Romanian_Deadlift/0.jpg"
+  },
+  {
+    "id": "Barbell_Lunge",
+    "nome": "Afundo com barra",
+    "grupo": "Pernas",
+    "imagem": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Barbell_Lunge/0.jpg"
+  },
+  {
+    "id": "Dumbbell_Lunges",
+    "nome": "Afundo com halteres",
+    "grupo": "Pernas",
+    "imagem": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Dumbbell_Lunges/0.jpg"
+  },
+  {
+    "id": "Standing_Calf_Raises",
+    "nome": "Panturrilha em pé",
+    "grupo": "Pernas",
+    "imagem": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Standing_Calf_Raises/0.jpg"
+  },
+  {
+    "id": "Seated_Calf_Raise",
+    "nome": "Panturrilha sentado",
+    "grupo": "Pernas",
+    "imagem": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Seated_Calf_Raise/0.jpg"
+  },
+  {
+    "id": "Barbell_Shoulder_Press",
+    "nome": "Desenvolvimento com barra",
+    "grupo": "Ombros",
+    "imagem": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Barbell_Shoulder_Press/0.jpg"
+  },
+  {
+    "id": "Dumbbell_Shoulder_Press",
+    "nome": "Desenvolvimento com halteres",
+    "grupo": "Ombros",
+    "imagem": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Dumbbell_Shoulder_Press/0.jpg"
+  },
+  {
+    "id": "Arnold_Dumbbell_Press",
+    "nome": "Desenvolvimento Arnold",
+    "grupo": "Ombros",
+    "imagem": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Arnold_Dumbbell_Press/0.jpg"
+  },
+  {
+    "id": "Side_Lateral_Raise",
+    "nome": "Elevação lateral",
+    "grupo": "Ombros",
+    "imagem": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Side_Lateral_Raise/0.jpg"
+  },
+  {
+    "id": "Front_Dumbbell_Raise",
+    "nome": "Elevação frontal",
+    "grupo": "Ombros",
+    "imagem": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Front_Dumbbell_Raise/0.jpg"
+  },
+  {
+    "id": "Cable_Rear_Delt_Fly",
+    "nome": "Crucifixo inverso (cabo)",
+    "grupo": "Ombros",
+    "imagem": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Cable_Rear_Delt_Fly/0.jpg"
+  },
+  {
+    "id": "Barbell_Shrug",
+    "nome": "Encolhimento com barra",
+    "grupo": "Ombros",
+    "imagem": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Barbell_Shrug/0.jpg"
+  },
+  {
+    "id": "Barbell_Curl",
+    "nome": "Rosca direta com barra",
+    "grupo": "Bíceps",
+    "imagem": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Barbell_Curl/0.jpg"
+  },
+  {
+    "id": "Dumbbell_Bicep_Curl",
+    "nome": "Rosca direta com halteres",
+    "grupo": "Bíceps",
+    "imagem": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Dumbbell_Bicep_Curl/0.jpg"
+  },
+  {
+    "id": "Dumbbell_Alternate_Bicep_Curl",
+    "nome": "Rosca alternada",
+    "grupo": "Bíceps",
+    "imagem": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Dumbbell_Alternate_Bicep_Curl/0.jpg"
+  },
+  {
+    "id": "Hammer_Curls",
+    "nome": "Rosca martelo",
+    "grupo": "Bíceps",
+    "imagem": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Hammer_Curls/0.jpg"
+  },
+  {
+    "id": "Concentration_Curls",
+    "nome": "Rosca concentrada",
+    "grupo": "Bíceps",
+    "imagem": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Concentration_Curls/0.jpg"
+  },
+  {
+    "id": "Preacher_Curl",
+    "nome": "Rosca scott",
+    "grupo": "Bíceps",
+    "imagem": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Preacher_Curl/0.jpg"
+  },
+  {
+    "id": "EZ-Bar_Curl",
+    "nome": "Rosca com barra W",
+    "grupo": "Bíceps",
+    "imagem": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/EZ-Bar_Curl/0.jpg"
+  },
+  {
+    "id": "Triceps_Pushdown",
+    "nome": "Tríceps pulley (barra)",
+    "grupo": "Tríceps",
+    "imagem": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Triceps_Pushdown/0.jpg"
+  },
+  {
+    "id": "Triceps_Pushdown_-_Rope_Attachment",
+    "nome": "Tríceps pulley (corda)",
+    "grupo": "Tríceps",
+    "imagem": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Triceps_Pushdown_-_Rope_Attachment/0.jpg"
+  },
+  {
+    "id": "Close-Grip_Barbell_Bench_Press",
+    "nome": "Supino pegada fechada",
+    "grupo": "Tríceps",
+    "imagem": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Close-Grip_Barbell_Bench_Press/0.jpg"
+  },
+  {
+    "id": "Bench_Dips",
+    "nome": "Mergulho no banco",
+    "grupo": "Tríceps",
+    "imagem": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Bench_Dips/0.jpg"
+  },
+  {
+    "id": "Dips_-_Triceps_Version",
+    "nome": "Paralelas (tríceps)",
+    "grupo": "Tríceps",
+    "imagem": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Dips_-_Triceps_Version/0.jpg"
+  },
+  {
+    "id": "Cable_Rope_Overhead_Triceps_Extension",
+    "nome": "Tríceps francês na corda",
+    "grupo": "Tríceps",
+    "imagem": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Cable_Rope_Overhead_Triceps_Extension/0.jpg"
+  },
+  {
+    "id": "Lying_Triceps_Press",
+    "nome": "Tríceps testa",
+    "grupo": "Tríceps",
+    "imagem": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Lying_Triceps_Press/0.jpg"
+  },
+  {
+    "id": "Crunches",
+    "nome": "Abdominal crunch",
+    "grupo": "Abdômen",
+    "imagem": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Crunches/0.jpg"
+  },
+  {
+    "id": "Cross-Body_Crunch",
+    "nome": "Abdominal cruzado",
+    "grupo": "Abdômen",
+    "imagem": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Cross-Body_Crunch/0.jpg"
+  },
+  {
+    "id": "Cable_Crunch",
+    "nome": "Abdominal na corda",
+    "grupo": "Abdômen",
+    "imagem": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Cable_Crunch/0.jpg"
+  },
+  {
+    "id": "Decline_Crunch",
+    "nome": "Abdominal declinado",
+    "grupo": "Abdômen",
+    "imagem": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Decline_Crunch/0.jpg"
+  },
+  {
+    "id": "Plank",
+    "nome": "Prancha",
+    "grupo": "Abdômen",
+    "imagem": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Plank/0.jpg"
+  },
+  {
+    "id": "Hanging_Leg_Raise",
+    "nome": "Elevação de pernas na barra",
+    "grupo": "Abdômen",
+    "imagem": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Hanging_Leg_Raise/0.jpg"
+  },
+  {
+    "id": "Flat_Bench_Lying_Leg_Raise",
+    "nome": "Elevação de pernas no banco",
+    "grupo": "Abdômen",
+    "imagem": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Flat_Bench_Lying_Leg_Raise/0.jpg"
+  },
+  {
+    "id": "Russian_Twist",
+    "nome": "Russian twist (rotação)",
+    "grupo": "Abdômen",
+    "imagem": "https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises/Russian_Twist/0.jpg"
+  }
+]

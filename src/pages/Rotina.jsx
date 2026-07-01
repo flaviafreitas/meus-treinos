@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom'
 import { supabase, FOTOS_BUCKET } from '../supabaseClient'
 import { useAuth } from '../context/AuthContext'
 import Modal from '../components/Modal'
+import BibliotecaExercicios from '../components/BibliotecaExercicios'
 
 const FORM_VAZIO = { nome: '', series: '', repeticoes: '', observacoes: '' }
 
@@ -21,6 +22,7 @@ export default function Rotina() {
   const [arquivoFoto, setArquivoFoto] = useState(null)
   const [previewFoto, setPreviewFoto] = useState('')
   const [salvando, setSalvando] = useState(false)
+  const [bibAberta, setBibAberta] = useState(false)
 
   async function carregar() {
     setCarregando(true)
@@ -49,6 +51,7 @@ export default function Rotina() {
     setForm(FORM_VAZIO)
     setArquivoFoto(null)
     setPreviewFoto('')
+    setBibAberta(true) // abre já na busca da biblioteca
     setModalAberto(true)
   }
 
@@ -62,7 +65,16 @@ export default function Rotina() {
     })
     setArquivoFoto(null)
     setPreviewFoto(ex.foto_url ?? '')
+    setBibAberta(false)
     setModalAberto(true)
+  }
+
+  function escolherDaBiblioteca(item) {
+    // Preenche nome e usa a foto da biblioteca (URL direta, sem upload).
+    setForm((f) => ({ ...f, nome: item.nome }))
+    setArquivoFoto(null)
+    setPreviewFoto(item.imagem)
+    setBibAberta(false)
   }
 
   function escolherFoto(e) {
@@ -173,6 +185,19 @@ export default function Rotina() {
         onFechar={() => setModalAberto(false)}
       >
         <form onSubmit={salvar} className="form">
+          <div className="alternar-modo">
+            <button
+              type="button"
+              className={`btn btn--fantasma btn--pequeno ${bibAberta ? 'is-active' : ''}`}
+              onClick={() => setBibAberta((v) => !v)}
+            >
+              🔍 Buscar na biblioteca
+            </button>
+            <span className="alternar-modo__ou">ou preencha manualmente abaixo</span>
+          </div>
+
+          {bibAberta && <BibliotecaExercicios onEscolher={escolherDaBiblioteca} />}
+
           <div className="foto-upload">
             {previewFoto ? (
               <img src={previewFoto} alt="Prévia" className="foto-upload__preview" />
