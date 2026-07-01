@@ -51,8 +51,10 @@ export default function BibliotecaExercicios({ onEscolher }) {
           <li key={e.id}>
             <button type="button" onClick={() => onEscolher(e)}>
               <img src={e.imagem} alt={e.nome} loading="lazy" />
-              <span className="biblioteca__nome">{e.nome}</span>
-              <span className="biblioteca__grupo">{e.grupo}</span>
+              <span className="biblioteca__texto">
+                <span className="biblioteca__nome">{e.nome}</span>
+                <span className="biblioteca__grupo">{e.grupo}</span>
+              </span>
             </button>
           </li>
         ))}

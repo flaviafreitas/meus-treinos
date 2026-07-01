@@ -22,7 +22,7 @@ export default function Rotina() {
   const [arquivoFoto, setArquivoFoto] = useState(null)
   const [previewFoto, setPreviewFoto] = useState('')
   const [salvando, setSalvando] = useState(false)
-  const [bibAberta, setBibAberta] = useState(false)
+  const [etapa, setEtapa] = useState('escolher') // 'escolher' | 'detalhes'
 
   async function carregar() {
     setCarregando(true)
@@ -51,7 +51,7 @@ export default function Rotina() {
     setForm(FORM_VAZIO)
     setArquivoFoto(null)
     setPreviewFoto('')
-    setBibAberta(true) // abre já na busca da biblioteca
+    setEtapa('escolher') // padrão: escolher da biblioteca
     setModalAberto(true)
   }
 
@@ -65,7 +65,7 @@ export default function Rotina() {
     })
     setArquivoFoto(null)
     setPreviewFoto(ex.foto_url ?? '')
-    setBibAberta(false)
+    setEtapa('detalhes') // edição vai direto aos campos
     setModalAberto(true)
   }
 
@@ -74,7 +74,14 @@ export default function Rotina() {
     setForm((f) => ({ ...f, nome: item.nome }))
     setArquivoFoto(null)
     setPreviewFoto(item.imagem)
-    setBibAberta(false)
+    setEtapa('detalhes')
+  }
+
+  function criarDoZero() {
+    setForm(FORM_VAZIO)
+    setArquivoFoto(null)
+    setPreviewFoto('')
+    setEtapa('detalhes')
   }
 
   function escolherFoto(e) {
@@ -180,25 +187,43 @@ export default function Rotina() {
       </button>
 
       <Modal
-        titulo={editando ? 'Editar exercício' : 'Novo exercício'}
+        titulo={
+          etapa === 'escolher'
+            ? 'Adicionar exercício'
+            : editando
+              ? 'Editar exercício'
+              : 'Novo exercício'
+        }
         aberto={modalAberto}
         onFechar={() => setModalAberto(false)}
       >
-        <form onSubmit={salvar} className="form">
-          <div className="alternar-modo">
+        {etapa === 'escolher' ? (
+          <div className="escolher-ex">
+            <BibliotecaExercicios onEscolher={escolherDaBiblioteca} />
+            <div className="escolher-ex__ou">
+              <span>não achou? </span>
+            </div>
             <button
               type="button"
-              className={`btn btn--fantasma btn--pequeno ${bibAberta ? 'is-active' : ''}`}
-              onClick={() => setBibAberta((v) => !v)}
+              className="btn btn--fantasma escolher-ex__criar"
+              onClick={criarDoZero}
             >
-              🔍 Buscar na biblioteca
+              ✏️ Criar exercício do zero
             </button>
-            <span className="alternar-modo__ou">ou preencha manualmente abaixo</span>
           </div>
+        ) : (
+          <form onSubmit={salvar} className="form">
+            {!editando && (
+              <button
+                type="button"
+                className="btn btn--fantasma btn--pequeno voltar-bib"
+                onClick={() => setEtapa('escolher')}
+              >
+                ← Escolher da biblioteca
+              </button>
+            )}
 
-          {bibAberta && <BibliotecaExercicios onEscolher={escolherDaBiblioteca} />}
-
-          <div className="foto-upload">
+            <div className="foto-upload">
             {previewFoto ? (
               <img src={previewFoto} alt="Prévia" className="foto-upload__preview" />
             ) : (
@@ -261,10 +286,11 @@ export default function Rotina() {
 
           {erro && <p className="alerta alerta--erro">{erro}</p>}
 
-          <button type="submit" className="btn btn--primario" disabled={salvando}>
-            {salvando ? 'Salvando…' : 'Salvar exercício'}
-          </button>
-        </form>
+            <button type="submit" className="btn btn--primario" disabled={salvando}>
+              {salvando ? 'Salvando…' : 'Salvar exercício'}
+            </button>
+          </form>
+        )}
       </Modal>
     </div>
   )

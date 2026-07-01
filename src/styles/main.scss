@@ -325,20 +325,24 @@ input, textarea {
   label { cursor: pointer; }
 }
 
-/* ---------- Biblioteca de exercícios ---------- */
-.alternar-modo {
+/* ---------- Passo "escolher exercício" ---------- */
+.escolher-ex {
   display: flex;
-  align-items: center;
-  gap: 10px;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 12px;
 
-  &__ou { font-size: 12px; color: $texto-fraco; }
-  .btn.is-active {
-    border-color: $primaria;
-    color: $primaria;
+  &__ou {
+    text-align: center;
+    font-size: 12px;
+    color: $texto-fraco;
+    margin-top: 2px;
   }
+  &__criar { width: 100%; }
 }
 
+.voltar-bib { align-self: flex-start; }
+
+/* ---------- Biblioteca de exercícios ---------- */
 .biblioteca {
   display: flex;
   flex-direction: column;
@@ -380,17 +384,18 @@ input, textarea {
     list-style: none;
     margin: 0;
     padding: 0;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 8px;
-    max-height: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    max-height: 60vh;
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
 
     button {
       width: 100%;
       display: flex;
-      flex-direction: column;
-      gap: 2px;
+      align-items: center;
+      gap: 10px;
       background: $fundo-2;
       border: 1px solid $borda;
       border-radius: $raio-sm;
@@ -398,18 +403,22 @@ input, textarea {
       text-align: left;
       color: $texto;
 
+      &:active { background: $fundo-3; }
+
       img {
-        width: 100%;
-        aspect-ratio: 1 / 1;
+        width: 52px;
+        height: 52px;
+        flex-shrink: 0;
         object-fit: cover;
         border-radius: 8px;
         background: $fundo-3;
       }
     }
   }
-  &__nome { font-size: 13px; font-weight: 600; line-height: 1.2; margin-top: 4px; }
+  &__texto { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+  &__nome { font-size: 14px; font-weight: 600; line-height: 1.25; }
   &__grupo { font-size: 11px; color: $texto-fraco; }
-  &__vazio { grid-column: 1 / -1; text-align: center; color: $texto-fraco; padding: 20px; font-size: 14px; }
+  &__vazio { text-align: center; color: $texto-fraco; padding: 16px; font-size: 14px; }
 }
 
 /* ---------- Modal ---------- */
