@@ -26,9 +26,25 @@ Regras do JSON:
 - "series" é um número inteiro (ou null se não se aplica).
 - "repeticoes" é texto (pode ser uma faixa como "8-12" ou algo como "até a falha").
 - "observacoes" é um texto curto (pode ser "").
-- IMPORTANTE (para o app achar a foto): use nos exercícios EXATAMENTE os nomes da lista de exercícios disponíveis que eu vou te enviar (em anexo ou colada). Não invente, não traduza e não altere os nomes. Se não houver um nome exato, escolha o mais próximo que exista na lista.
-- Se você não recebeu a lista, peça que eu a envie antes de montar o treino.
+- IMPORTANTE (para o app achar a foto): use nos exercícios EXATAMENTE os nomes da "Lista de exercícios disponíveis" que está no fim desta mensagem. Não invente, não traduza e não altere os nomes. Se não houver um nome exato, escolha o mais próximo que exista na lista.
 - Não adicione fotos, comentários ou campos além dos mostrados acima.`
+
+// Lista de nomes disponíveis, agrupada por grupo muscular, para embutir no prompt.
+const listaExercicios = (() => {
+  const grupos = {}
+  for (const e of biblioteca) (grupos[e.grupo] ??= []).push(e.nome)
+  return Object.keys(grupos)
+    .sort((a, b) => a.localeCompare(b, 'pt'))
+    .map((g) => `== ${g} ==\n${grupos[g].sort((a, b) => a.localeCompare(b, 'pt')).join('\n')}`)
+    .join('\n\n')
+})()
+
+// Prompt pronto para copiar: instrução + a lista de exercícios que o app conhece.
+// Assim o ChatGPT só usa nomes que existem e a foto casa sempre.
+export const PROMPT_COMPLETO = `${PROMPT_IA}
+
+--- Lista de exercícios disponíveis (use EXATAMENTE estes nomes) ---
+${listaExercicios}`
 
 // Remove acentos e normaliza para comparar nomes de exercícios.
 function normalizar(texto) {

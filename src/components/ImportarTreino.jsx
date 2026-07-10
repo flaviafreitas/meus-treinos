@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useAuth } from '../context/AuthContext'
-import { PROMPT_IA, analisarTexto, importarRotinas } from '../lib/importarTreino'
+import { PROMPT_COMPLETO, analisarTexto, importarRotinas } from '../lib/importarTreino'
 
 export default function ImportarTreino({ onImportado }) {
   const { user } = useAuth()
@@ -12,7 +12,7 @@ export default function ImportarTreino({ onImportado }) {
 
   async function copiarPrompt() {
     try {
-      await navigator.clipboard.writeText(PROMPT_IA)
+      await navigator.clipboard.writeText(PROMPT_COMPLETO)
       setCopiado(true)
       setTimeout(() => setCopiado(false), 2500)
     } catch {
@@ -58,8 +58,8 @@ export default function ImportarTreino({ onImportado }) {
       </button>
 
       <details className="importar__ver">
-        <summary>ver a instrução</summary>
-        <pre className="importar__prompt">{PROMPT_IA}</pre>
+        <summary>ver a instrução (inclui a lista de exercícios)</summary>
+        <pre className="importar__prompt">{PROMPT_COMPLETO}</pre>
       </details>
 
       <label className="campo">
