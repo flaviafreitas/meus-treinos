@@ -4,6 +4,7 @@ import { supabase, FOTOS_BUCKET } from '../supabaseClient'
 import { useAuth } from '../context/AuthContext'
 import Modal from '../components/Modal'
 import BibliotecaExercicios from '../components/BibliotecaExercicios'
+import ExercicioDetalhe from '../components/ExercicioDetalhe'
 
 const FORM_VAZIO = { nome: '', series: '', repeticoes: '', observacoes: '' }
 
@@ -23,6 +24,7 @@ export default function Rotina() {
   const [previewFoto, setPreviewFoto] = useState('')
   const [salvando, setSalvando] = useState(false)
   const [etapa, setEtapa] = useState('escolher') // 'escolher' | 'detalhes'
+  const [verEx, setVerEx] = useState(null) // exercício aberto na tela single
 
   async function carregar() {
     setCarregando(true)
@@ -160,19 +162,21 @@ export default function Rotina() {
         <ul className="lista-exercicios">
           {exercicios.map((ex) => (
             <li key={ex.id} className="card-ex">
-              {ex.foto_url ? (
-                <img className="card-ex__foto" src={ex.foto_url} alt={ex.nome} loading="lazy" />
-              ) : (
-                <div className="card-ex__foto card-ex__foto--vazia">💪</div>
-              )}
-              <div className="card-ex__info">
-                <h3>{ex.nome}</h3>
-                <p className="card-ex__nums">
-                  {ex.series ? <span>{ex.series} séries</span> : null}
-                  {ex.repeticoes ? <span>{ex.repeticoes} reps</span> : null}
-                </p>
-                {ex.observacoes && <p className="card-ex__obs">{ex.observacoes}</p>}
-              </div>
+              <button type="button" className="card-ex__abrir" onClick={() => setVerEx(ex)}>
+                {ex.foto_url ? (
+                  <img className="card-ex__foto" src={ex.foto_url} alt={ex.nome} loading="lazy" />
+                ) : (
+                  <div className="card-ex__foto card-ex__foto--vazia">💪</div>
+                )}
+                <div className="card-ex__info">
+                  <h3>{ex.nome}</h3>
+                  <p className="card-ex__nums">
+                    {ex.series ? <span>{ex.series} séries</span> : null}
+                    {ex.repeticoes ? <span>{ex.repeticoes} reps</span> : null}
+                  </p>
+                  {ex.observacoes && <p className="card-ex__obs">{ex.observacoes}</p>}
+                </div>
+              </button>
               <div className="card-ex__acoes">
                 <button type="button" onClick={() => abrirEdicao(ex)} aria-label="Editar">✏️</button>
                 <button type="button" onClick={() => excluir(ex)} aria-label="Excluir">🗑️</button>
@@ -291,6 +295,10 @@ export default function Rotina() {
             </button>
           </form>
         )}
+      </Modal>
+
+      <Modal titulo={verEx?.nome ?? ''} aberto={!!verEx} onFechar={() => setVerEx(null)}>
+        <ExercicioDetalhe exercicio={verEx} />
       </Modal>
     </div>
   )
