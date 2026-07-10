@@ -1,0 +1,900 @@
+# Lista de exercícios disponíveis no app "Meus Treinos" (873 no total).
+# Ao montar o treino, use EXATAMENTE um destes nomes (não invente nem traduza).
+# Se não houver equivalente exato, escolha o mais próximo desta lista.
+
+== Abdômen (93) ==
+3/4 Sit-Up
+Ab Roller
+Abdominal - acima da cabeça mãos
+Abdominal - pernas com bola
+Abdominal com bola
+Abdominal com peso
+Abdominal crunch
+Abdominal cruzado
+Abdominal declinado
+Abdominal declinado invertido
+Abdominal declinado oblíquo
+Abdominal em pé na corda
+Abdominal invertido
+Abdominal invertido no cabo
+Abdominal invertido suspenso
+Abdominal na corda
+Abdominal na corda
+Abdominal na máquina
+Abdominal oblíquo
+Abdominal oblíquo - no chão
+Abdominal sentado no cabo
+Advanced Kettlebell Windmill
+Air Bike
+Alongamento acima da cabeça
+Alongamento sentado acima da cabeça
+Alternate Heel Touchers
+Bent Press
+Bent-Knee Hip Raise
+Bosu Ball Cable Crunch With Side Bends
+Bottoms Up
+Butt-Ups
+Cable Judo Flip
+Cable Russian Twists
+Cocoons
+Dead Bug
+Double Kettlebell Windmill
+Elbow to Knee
+Elevação de pernas na barra
+Elevação de pernas no banco
+Elevação quadril no Smith
+Exercise Ball Pull-In
+Flat Bench Leg Pull-In
+Flexão lateral com barra
+Flexão lateral com halteres
+Flexão lateral com peso bola
+Frog Sit-Ups
+Gorilla Chin/Crunch
+Hanging Pike
+Jackknife Sit-Up
+Janda Sit-Up
+Kettlebell Figure 8
+Kettlebell Pass Between The Legs
+Kettlebell Windmill
+Knee/Hip Raise On Parallel Bars
+Kneeling Cable Crunch With Alternating Oblique Twists
+Landmine 180's
+Leg Pull-In
+One-Arm High-Pulley Cable Side Bends
+One-Arm Medicine Ball Slam
+Otis-Up
+Pallof Press
+Pallof Press With Rotation
+Prancha
+Press Sit-Up
+Rollout abdominal com barra
+Rollout abdominal com barra - joelho
+Rollout abdominal no banco com barra
+Rosca inferior costas
+Rotação com anilha
+Rotação completo com medicine ball
+Rotação sentado com barra
+Russian twist (rotação)
+Scissor Kick
+Seated Flat Bench Leg Pull-In
+Seated Leg Tucks
+Side Bridge
+Side Jackknife
+Sit-Up
+Sledgehammer Swings
+Spell Caster
+Spider Crawl
+Standing Cable Lift
+Standing Cable Wood Chop
+Standing Lateral Stretch
+Stomach Vacuum
+Supine One-Arm Overhead Throw
+Supine Two-Arm Overhead Throw
+Suspended Fallout
+Toe Touchers
+Torso Rotation
+Tuck Crunch
+Weighted Sit-Ups - With Bands
+Wind Sprints
+
+== Antebraço (25) ==
+Bottoms-Up Clean From The Hang Position
+Dumbbell Lying Pronation
+Dumbbell Lying Supination
+Farmer's Walk
+Finger Curls
+Kneeling Forearm Stretch
+Palms-Down Dumbbell Wrist Curl Over A Bench
+Palms-Down Wrist Curl Over A Bench
+Palms-Up Barbell Wrist Curl Over A Bench
+Palms-Up Dumbbell Wrist Curl Over A Bench
+Plate Pinch
+Rickshaw Carry
+Rosca de punho no cabo
+Seated Dumbbell Palms-Down Wrist Curl
+Seated Dumbbell Palms-Up Wrist Curl
+Seated One-Arm Dumbbell Palms-Down Wrist Curl
+Seated One-Arm Dumbbell Palms-Up Wrist Curl
+Seated Palm-Up Barbell Wrist Curl
+Seated Palms-Down Barbell Wrist Curl
+Seated Two-Arm Palms-Up Low-Pulley Wrist Curl
+Standing Olympic Plate Hand Squeeze
+Standing Palms-Up Barbell Behind The Back Wrist Curl
+Wrist Circles
+Wrist Roller
+Wrist Rotations with Straight Bar
+
+== Bíceps (53) ==
+Alongamento em pé bíceps
+Brachialis-SMR
+Close-Grip EZ Bar Curl
+Close-Grip EZ-Bar Curl with Band
+Close-Grip Standing Barbell Curl
+Flexor Incline Dumbbell Curls
+Lying Close-Grip Bar Curl On High Pulley
+Preacher Hammer Dumbbell Curl
+Rosca acima da cabeça no cabo
+Rosca alternada
+Rosca alto no cabo
+Rosca com barra W
+Rosca concentrada
+Rosca concentrada em pé
+Rosca deitado alto no banco com barra
+Rosca deitado deitado com halteres
+Rosca deitado no cabo
+Rosca direta com barra
+Rosca direta com halteres
+Rosca drag
+Rosca em pé bíceps no cabo
+Rosca em pé invertido com halteres
+Rosca inclinado alternado com halteres
+Rosca inclinado com halteres
+Rosca inclinado de bruços com halteres
+Rosca inclinado deitado com barra
+Rosca inclinado interno
+Rosca invertido com anilha
+Rosca invertido com barra
+Rosca invertido no cabo
+Rosca martelo
+Rosca martelo alternado
+Rosca martelo cruzado
+Rosca martelo inclinado
+Rosca martelo no cabo - na corda
+Rosca na máquina
+Rosca scott
+Rosca scott invertido com barra
+Rosca scott na máquina
+Rosca scott no cabo
+Rosca scott unilateral com halteres
+Rosca scott zottman
+Rosca sentado com halteres
+Rosca sentado interno com halteres
+Rosca spider
+Rosca zottman
+Seated Biceps
+Seated Close-Grip Concentration Barbell Curl
+Standing Inner-Biceps Curl
+Standing One-Arm Cable Curl
+Standing One-Arm Dumbbell Curl Over Incline Bench
+Two-Arm Dumbbell Preacher Curl
+Wide-Grip Standing Barbell Curl
+
+== Costas (99) ==
+Alongamento na cadeira inferior costas
+Alongamento superior costas
+Alternating Renegade Row
+Atlas Stone Trainer
+Atlas Stones
+Axle Deadlift
+Barra fixa (pegada aberta)
+Barra fixa (pegada supinada)
+Barra fixa assistida
+Barra fixa com peso
+Bent Over One-Arm Long Bar Row
+Bent Over Two-Arm Long Bar Row
+Bent Over Two-Dumbbell Row With Palms In
+Bent-Arm Barbell Pullover
+Bodyweight Mid Row
+Cat Stretch
+Catch and Overhead Throw
+Child's Pose
+Crossover Reverse Lunge
+Dancer's Stretch
+Deficit Deadlift
+Dynamic Back Stretch
+Full Range-Of-Motion Lat Pulldown
+Gironda Sternum Chins
+Good morning sentado
+Hiperextensão com peso bola
+Hug A Ball
+Hug Knees To Chest
+Hyperextensions (Back Extensions)
+Hyperextensions With No Hyperextension Bench
+Incline Bench Pull
+Inverted Row
+Inverted Row with Straps
+Keg Load
+Kipping Muscle Up
+Kneeling Single-Arm High Pulley Row
+Latissimus Dorsi-SMR
+Levantamento terra
+Levantamento terra com correntes
+Levantamento terra com elástico
+Levantamento terra invertido com elástico
+Leverage Iso Row
+London Bridges
+Lower Back-SMR
+Lying Cambered Barbell Row
+Lying T-Bar Row
+Middle Back Shrug
+Middle Back Stretch
+Mixed Grip Chin
+Muscle Up
+One Arm Against Wall
+One Arm Chin-Up
+One Handed Hang
+One-Arm Dumbbell Row
+One-Arm Kettlebell Row
+One-Arm Long Bar Row
+Overhead Lat
+Overhead Slam
+Pelvic Tilt Into Bridge
+Pullups
+Puxada frontal (pegada aberta)
+Puxada frontal (pegada fechada)
+Puxada unilateral
+Pyramid
+Rack Pull with Bands
+Rack Pulls
+Remada ajoelhado alto na polia
+Remada alternado com kettlebell
+Remada alto na alavanca
+Remada baixa (cabo)
+Remada curvada com barra
+Remada curvada com halteres
+Remada curvado no Smith
+Remada elevado no cabo
+Remada inclinado com halteres
+Remada no trenó
+Remada suspenso
+Reverse Grip Bent-Over Rows
+Rhomboids-SMR
+Rocky Pull-Ups/Pulldowns
+Rope Climb
+Rope Straight-Arm Pulldown
+Seated One-arm Cable Pulley Rows
+Shotgun Row
+Side To Side Chins
+Side-Lying Floor Stretch
+Spinal Stretch
+Standing Pelvic Tilt
+Stiff Leg Barbell Good Morning
+Straight Bar Bench Mid Rows
+Straight-Arm Pulldown
+Superman
+T-Bar Row with Handle
+Tríceps pulley inclinado no cabo
+Two-Arm Kettlebell Row
+Underhand Cable Pulldowns
+V-Bar Pulldown
+V-Bar Pullup
+Wide-Grip Pulldown Behind The Neck
+
+== Glúteos (22) ==
+Agachamento ajoelhado
+Ankle On The Knee
+Butt Lift (Bridge)
+Coice glúteo
+Downward Facing Balance
+Elevação de quadril com barra
+Extensão quadril com elástico
+Flutter Kicks
+Hip Lift with Band
+Knee Across The Body
+Kneeling Jump Squat
+Leg Lift
+Lying Glute
+One Knee To Chest
+One-Legged Cable Kickback
+Physioball Hip Bridge
+Piriformis-SMR
+Ponte de glúteo com barra
+Ponte de glúteo unilateral
+Pull Through
+Seated Glute
+Step-up with Knee Raise
+
+== Ombros (127) ==
+Alongamento na cadeira superior corpo
+Alongamento ombro
+Anti-Gravity Press
+Arremesso para trás com medicine ball
+Band Pull Apart
+Barbell Rear Delt Row
+Battling Ropes
+Bent Over Low-Pulley Side Lateral
+Bradford/Rocky Presses
+Cable Internal Rotation
+Cable Rope Rear-Delt Rows
+Car Drivers
+Circus Bell
+Clean and Jerk
+Clean and Press
+Crucifix
+Crucifixo costas - com elástico
+Crucifixo inverso
+Crucifixo inverso (cabo)
+Crucifixo inverso curvado cabeça no banco com halteres
+Crucifixo inverso deitado
+Crucifixo inverso externo rotação
+Crucifixo invertido na máquina
+Crucifixo invertido no trenó
+Cuban Press
+Desenvolvimento - com elástico
+Desenvolvimento acima da cabeça no Smith
+Desenvolvimento alternado no cabo
+Desenvolvimento Arnold
+Desenvolvimento com barra
+Desenvolvimento com halteres
+Desenvolvimento militar em pé
+Desenvolvimento militar ombro na máquina
+Desenvolvimento militar sentado com barra
+Desenvolvimento na alavanca
+Desenvolvimento no cabo
+Desenvolvimento sentado no cabo
+Dumbbell Lying One-Arm Rear Lateral Raise
+Dumbbell One-Arm Shoulder Press
+Dumbbell One-Arm Upright Row
+Dumbbell Scaption
+Elbow Circles
+Elevação alternado deltoide
+Elevação com halteres
+Elevação em pé frontal cabeça com barra
+Elevação frontal
+Elevação frontal com anilha
+Elevação frontal no cabo
+Elevação inclinado frontal com halteres
+Elevação inclinado ombro com barra
+Elevação inclinado ombro com halteres
+Elevação inclinado Smith ombro
+Elevação lateral
+Elevação lateral - com elástico
+Elevação lateral deitado posterior com halteres
+Elevação lateral sentado lateral
+Elevação lateral sentado no cabo
+Elevação ombro
+External Rotation
+External Rotation with Band
+External Rotation with Cable
+Face pull
+Front Two-Dumbbell Raise
+Handstand Push-Ups
+Internal Rotation with Band
+Iron Cross
+Jerk duplo com kettlebell
+Jerk equilíbrio
+Kettlebell Arnold Press
+Kettlebell Pirate Ships
+Kettlebell Seesaw Press
+Kettlebell Turkish Get-Up (Lunge style)
+Kettlebell Turkish Get-Up (Squat style)
+Kneeling Arm Drill
+Landmine Linear Jammer
+Log Lift
+Lying One-Arm Lateral Raise
+Medicine Ball Scoop Throw
+One-Arm Incline Lateral Raise
+One-Arm Kettlebell Clean and Jerk
+One-Arm Kettlebell Jerk
+One-Arm Kettlebell Military Press To The Side
+One-Arm Kettlebell Para Press
+One-Arm Kettlebell Push Press
+One-Arm Kettlebell Snatch
+One-Arm Kettlebell Split Jerk
+One-Arm Kettlebell Split Snatch
+One-Arm Side Laterals
+Power Partials
+Pressão alternado com kettlebell
+Pressão em pé alternado com halteres
+Pressão em pé com halteres
+Pressão em pé por trás pescoço com barra
+Pressão sentado com halteres
+Pressão sentado com kettlebell
+Push press
+Push press - por trás pescoço
+Push press duplo com kettlebell
+Rack Delivery
+Remada baixo na polia pescoço
+Return Push from Stance
+Rotação de braços
+Round The World Shoulder Stretch
+Seated Bent-Over Rear Delt Raise
+Seated Front Deltoid
+See-Saw Press (Alternating Side Press)
+Shoulder Circles
+Side Laterals to Front Raise
+Side Wrist Pull
+Single Dumbbell Raise
+Single-Arm Linear Jammer
+Sled Overhead Backward Walk
+Smith Machine One-Arm Upright Row
+Snatch (arranco) duplo com kettlebell
+Standing Bradford Press
+Standing Dumbbell Straight-Arm Front Delt Raise Above Head
+Standing Low-Pulley Deltoid Raise
+Standing Palm-In One-Arm Dumbbell Press
+Standing Palms-In Dumbbell Press
+Standing Two-Arm Overhead Throw
+Straight Raises on Incline Bench
+Thruster com kettlebell
+Two-Arm Kettlebell Clean
+Two-Arm Kettlebell Jerk
+Two-Arm Kettlebell Military Press
+Upright Barbell Row
+Upward Stretch
+
+== Panturrilha (28) ==
+Alongamento panturrilha mãos na parede
+Alongamento sentado panturrilha
+Ankle Circles
+Anterior Tibialis-SMR
+Balance Board
+Calf Press On The Leg Press Machine
+Calf Stretch Elbows Against Wall
+Calves-SMR
+Dumbbell Seated One-Leg Calf Raise
+Foot-SMR
+Knee Circles
+Panturrilha - com elástico
+Panturrilha burrinho
+Panturrilha com halteres
+Panturrilha em pé
+Panturrilha em pé com barra
+Panturrilha em pé com halteres
+Panturrilha invertido no Smith
+Panturrilha no leg press
+Panturrilha no Smith
+Panturrilha sentado
+Panturrilha sentado com barra
+Peroneals Stretch
+Peroneals-SMR
+Posterior Tibialis Stretch
+Rocking Standing Calf Raise
+Standing Gastrocnemius Calf Stretch
+Standing Soleus And Achilles Stretch
+
+== Peito (84) ==
+Alongamento frontal peito ombro
+Alongamento peito com bola
+Alongamento por trás cabeça peito
+Around The Worlds
+Barbell Guillotine Bench Press
+Bent-Arm Dumbbell Pullover
+Cable Iron Cross
+Chest Push (multiple response)
+Chest Push (single response)
+Chest Push from 3 point stance
+Chest Push with Run Release
+Clock Push-Up
+Cross Over - With Bands
+Crossover baixo no cabo
+Crossover no cabo
+Crucifixo com halteres
+Crucifixo declinado com halteres
+Crucifixo inclinado com halteres
+Crucifixo inclinado com halteres - rotação
+Crucifixo inclinado no cabo
+Crucifixo peso corporal
+Crucifixo reto no banco no cabo
+Decline Push-Up
+Drop Push
+Dynamic Chest Stretch
+Elbows Back
+Extended Range One-Arm Kettlebell Floor Press
+Flexão de braço
+Forward Drag with Press
+Front Raise And Pullover
+Hammer Grip Incline DB Bench Press
+Heavy Bag Thrust
+Incline Dumbbell Bench With Palms Facing In
+Incline Push-Up
+Incline Push-Up Depth Jump
+Incline Push-Up Medium
+Incline Push-Up Reverse Grip
+Incline Push-Up Wide
+Isometric Chest Squeezes
+Isometric Wipers
+Leg-Over Floor Press
+Medicine Ball Chest Pass
+Mergulho nas paralelas (peito)
+One-Arm Flat Bench Dumbbell Flye
+One-Arm Kettlebell Floor Press
+Plyo Kettlebell Pushups
+Plyo Push-up
+Pressão alternado no chão
+Pressão com correntes
+Pressão declinado na alavanca peito
+Pressão declinado no Smith
+Pressão declinado Smith
+Pressão em pé peito no cabo
+Pressão inclinado com halteres
+Pressão inclinado na alavanca peito
+Pressão inclinado peito no cabo
+Pressão na alavanca peito
+Pressão peito no cabo
+Pressão pescoço
+Push Up to Side Plank
+Push-Up Wide
+Push-Ups With Feet Elevated
+Push-Ups With Feet On An Exercise Ball
+Pushups (Close and Wide Hand Positions)
+Single-Arm Cable Crossover
+Single-Arm Push-Up
+Straight-Arm Dumbbell Pullover
+Supino - com elástico
+Supino declinado com barra
+Supino declinado com halteres
+Supino inclinado com barra
+Supino inclinado no Smith
+Supino na máquina
+Supino no Smith
+Supino pegada neutra com halteres
+Supino reto com barra
+Supino reto com halteres
+Supino unilateral com halteres
+Suspended Push-Up
+Svend Press
+Voador (peck deck)
+Wide-Grip Barbell Bench Press
+Wide-Grip Decline Barbell Bench Press
+Wide-Grip Decline Barbell Pullover
+
+== Pernas (248) ==
+90/90 Hamstring
+Adductor
+Adductor/Groin
+Afundo caminhando com barra
+Afundo caminhando peso corporal
+Afundo com barra
+Afundo com halteres
+Afundo elevado costas
+Afundo posterior com halteres
+Afundo sprint
+Agachamento - com elástico
+Agachamento (peso corporal)
+Agachamento acima da cabeça
+Agachamento afastado
+Agachamento afastado com halteres
+Agachamento com correntes
+Agachamento com elástico
+Agachamento com halteres
+Agachamento com peso
+Agachamento deitado na máquina
+Agachamento frontal com barra
+Agachamento frontal no banco com barra
+Agachamento hack
+Agachamento hack com barra
+Agachamento invertido com elástico
+Agachamento invertido na caixa com elástico
+Agachamento lateral afastado com barra
+Agachamento livre
+Agachamento na cadeira
+Agachamento na caixa
+Agachamento na caixa com correntes
+Agachamento na caixa com elástico
+Agachamento no banco com barra
+Agachamento no banco com halteres
+Agachamento no Smith
+Agachamento profundo
+Agachamento suspenso afastado
+All Fours Quad Stretch
+Alongamento deitado lateral virilha
+Alongamento em pé elevado quadríceps
+Alongamento em pé posterior panturrilha
+Alongamento glúteo com elástico
+Alongamento lateral quadríceps
+Alongamento posterior
+Alongamento quadríceps
+Alongamento sentado no chão posterior
+Alongamento sentado posterior panturrilha
+Alongamento virilha costas
+Alternate Leg Diagonal Bound
+Backward Drag
+Band Good Morning (Pull Through)
+Band Hip Adductions
+Bear Crawl Sled Drags
+Bench Sprint
+Bicycling
+Bicycling, Stationary
+Box Jump (Multiple Response)
+Box Skip
+Cable Deadlifts
+Cable Hip Adduction
+Cadeira extensora
+Cadeira flexora
+Car Deadlift
+Carioca Quick Step
+Chair Leg Extended Stretch
+Clean
+Clean (pegada suspensa)
+Clean (pegada suspensa) alternado
+Clean (pegada suspensa) alternado duplo com kettlebell
+Clean (pegada suspensa) com kettlebell
+Clean (power)
+Clean (power) blocos
+Clean (power) suspenso no Smith
+Clean afastado
+Clean blocos
+Clean com halteres
+Clean Deadlift
+Clean Pull
+Conan's Wheel
+Crossover deitado
+Depth Jump Leap
+Double Leg Butt Kick
+Elevação frontal perna
+Elevação lateral perna
+Elevação posterior perna
+Elliptical Trainer
+Fast Skipping
+Flexora bola
+Flexora em pé
+Floor Glute-Ham Raise
+Frankenstein Squat
+Freehand Jump Squat
+Frog Hops
+Front Cone Hops (or hurdle hops)
+Front Squat (Clean Grip)
+Front Squats With Two Kettlebells
+Glute Ham Raise
+Goblet Squat
+Good morning
+Good morning com elástico
+Good morning na barra barra
+Good Morning off Pins
+Groiners
+Hamstring-SMR
+Hang Clean - Below the Knees
+Hang Snatch - Below Knees
+Heaving Snatch Balance
+Hip Circles (prone)
+Hip Flexion with Band
+Hiperextensão invertido
+Hurdle Hops
+Iliotibial Tract-SMR
+Inchworm
+Intermediate Groin Stretch
+Intermediate Hip Flexor and Quad Stretch
+Iron Crosses (stretch)
+Jefferson Squats
+Jerk
+Jerk afastado
+Jerk Dip Squat
+Jogging, Treadmill
+Kettlebell Dead Clean
+Kettlebell One-Legged Deadlift
+Kettlebell Pistol Squat
+Knee Tuck Jump
+Kneeling Hip Flexor
+Lateral Bound
+Lateral Box Jump
+Lateral Cone Hops
+Leg press
+Leg press no Smith
+Leg-Up Hamstring Stretch
+Levantamento terra na alavanca
+Levantamento terra romeno (stiff)
+Levantamento terra sumô
+Levantamento terra sumô com correntes
+Levantamento terra sumô com elástico
+Levantamento terra sumô invertido com elástico
+Linear 3-Part Start Technique
+Linear Acceleration Wall Drill
+Looking At Ceiling
+Lunge Pass Through
+Lying Bent Leg Groin
+Lying Hamstring
+Lying Prone Quadriceps
+Mesa flexora
+Monster Walk
+Mountain Climbers
+Moving Claw Series
+Muscle Snatch
+Narrow Stance Hack Squats
+Narrow Stance Leg Press
+Narrow Stance Squats
+Natural Glute Ham Raise
+Olympic Squat
+On-Your-Back Quad Stretch
+One Half Locust
+One Leg Barbell Squat
+One-Arm Kettlebell Clean
+One-Arm Kettlebell Swings
+One-Arm Open Palm Kettlebell Clean
+One-Arm Overhead Kettlebell Squats
+One-Arm Side Deadlift
+Open Palm Kettlebell Clean
+Platform Hamstring Slides
+Plie Dumbbell Squat
+Power Stairs
+Prone Manual Hamstring
+Prowler Sprint
+Quadriceps-SMR
+Quick Leap
+Recumbent Bike
+Rickshaw Deadlift
+Rocket Jump
+Romanian Deadlift from Deficit
+Rope Jumping
+Rosca sentado posterior com elástico
+Rowing, Stationary
+Runner's Stretch
+Running, Treadmill
+Salto afastado
+Salto em pé
+Salto em pé lateral
+Salto frontal na caixa
+Salto linear depth
+Salto no banco
+Salto sentado na caixa com halteres
+Sandbag Load
+Scissors Jump
+Seated Hamstring
+Side Hop-Sprint
+Side to Side Box Shuffle
+Single Leg Butt Kick
+Single Leg Push-off
+Single-Cone Sprint Drill
+Single-Leg High Box Squat
+Single-Leg Hop Progression
+Single-Leg Lateral Hop
+Single-Leg Leg Extension
+Single-Leg Stride Jump
+Sit Squats
+Skating
+Sled Drag - Harness
+Sled Push
+Smith Machine Pistol Squat
+Smith Machine Stiff-Legged Deadlift
+Smith Single-Leg Split Squat
+Snatch (arranco)
+Snatch (arranco)
+Snatch (arranco) afastado
+Snatch (arranco) blocos
+Snatch (arranco) blocos
+Snatch (arranco) equilíbrio
+Snatch (arranco) suspenso
+Snatch Deadlift
+Snatch Pull
+Speed Box Squat
+Speed Squats
+Squat Jerk
+Squat with Plate Movers
+Stairmaster
+Standing Hip Circles
+Standing Hip Flexors
+Standing Toe Touches
+Star Jump
+Step Mill
+Stiff-Legged Barbell Deadlift
+Stiff-Legged Dumbbell Deadlift
+Stride Jump Crossover
+Subida no banco com barra
+Subida no banco com halteres
+The Straddle
+Thigh Abductor
+Thigh Adductor
+Tire Flip
+Trail Running/Walking
+Trap Bar Deadlift
+Upper Back-Leg Grab
+Vertical Swing
+Walking, Treadmill
+Weighted Jump Squat
+Weighted Sissy Squat
+Wide Stance Barbell Squat
+Wide Stance Stiff Legs
+Windmills
+World's Greatest Stretch
+Yoke Walk
+Zercher Squats
+
+== Pescoço (8) ==
+Alongamento lateral pescoço
+Chin To Chest Stretch
+Isometric Neck Exercise - Front And Back
+Isometric Neck Exercise - Sides
+Lying Face Down Plate Neck Resistance
+Lying Face Up Plate Neck Resistance
+Neck-SMR
+Seated Head Harness Neck Resistance
+
+== Trapézio (15) ==
+Calf-Machine Shoulder Shrug
+Clean Shrug
+Encolhimento com barra
+Encolhimento com halteres
+Encolhimento na alavanca
+Encolhimento no cabo
+Encolhimento por trás costas com barra
+Encolhimento por trás costas no Smith
+Kettlebell Sumo High Pull
+Remada alta - com elástico
+Remada alta em pé com halteres
+Remada alta no Smith
+Scapular Pull-Up
+Snatch Shrug
+Upright Cable Row
+
+== Tríceps (71) ==
+Alongamento lateral tríceps
+Alongamento tríceps
+Arremesso deitado peito
+Band Skull Crusher
+Bench Press - Powerlifting
+Board Press
+Body-Up
+Chain Handle Extension
+Close-Grip Dumbbell Press
+Close-Grip EZ-Bar Press
+Close-Grip Push-Up off of a Dumbbell
+Coice tríceps com halteres
+Decline Close-Grip Bench To Skull Crusher
+Dumbbell One-Arm Triceps Extension
+Dumbbell Tricep Extension -Pronated Grip
+Extensão acima da cabeça tríceps na corda
+Extensão de tríceps acima da cabeça no trenó
+Extensão de tríceps ajoelhado no cabo
+Extensão de tríceps baixo no cabo
+Extensão de tríceps declinado com barra W
+Extensão de tríceps declinado com halteres
+Extensão de tríceps deitado no cabo
+Extensão de tríceps em pé acima da cabeça com barra
+Extensão de tríceps em pé com halteres
+Extensão de tríceps inclinado com barra
+Extensão de tríceps inclinado no cabo
+Extensão de tríceps na máquina
+Extensão deitado tríceps com halteres
+Extensão unilateral tríceps no cabo
+EZ-Bar Skullcrusher
+Incline Push-Up Close-Grip
+Lying Close-Grip Barbell Triceps Extension Behind The Head
+Lying Close-Grip Barbell Triceps Press To Chin
+Mergulho com peso no banco
+Mergulho na máquina
+Mergulho no banco
+One Arm Pronated Dumbbell Triceps Extension
+One Arm Supinated Dumbbell Triceps Extension
+Overhead Triceps
+Paralelas (tríceps)
+Parallel Bar Dip
+Pin Presses
+Pressão
+Pressão corpo tríceps
+Pressão no chão
+Pressão no chão com correntes
+Pressão no chão com halteres
+Pressão sentado tríceps
+Pressão unilateral no chão
+Push-Ups - Close Triceps Position
+Reverse Grip Triceps Pushdown
+Ring Dips
+Seated Bent-Over One-Arm Dumbbell Triceps Extension
+Seated Bent-Over Two-Arm Dumbbell Triceps Extension
+Smith Machine Close-Grip Bench Press
+Speed Band Overhead Triceps
+Standing Bent-Over One-Arm Dumbbell Triceps Extension
+Standing Bent-Over Two-Arm Dumbbell Triceps Extension
+Standing Low-Pulley One-Arm Triceps Extension
+Standing One-Arm Dumbbell Triceps Extension
+Standing Towel Triceps Extension
+Supino com correntes
+Supino invertido com elástico
+Supino invertido tríceps
+Supino pegada fechada
+Tate Press
+Tríceps francês na corda
+Tríceps pulley - barra
+Tríceps pulley (barra)
+Tríceps pulley (corda)
+Tríceps testa

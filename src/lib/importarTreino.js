@@ -26,7 +26,8 @@ Regras do JSON:
 - "series" é um número inteiro (ou null se não se aplica).
 - "repeticoes" é texto (pode ser uma faixa como "8-12" ou algo como "até a falha").
 - "observacoes" é um texto curto (pode ser "").
-- Use nomes de exercícios comuns em português (ex: "Supino reto", "Agachamento livre", "Remada curvada") para o app conseguir achar a foto.
+- IMPORTANTE (para o app achar a foto): use nos exercícios EXATAMENTE os nomes da lista de exercícios disponíveis que eu vou te enviar (em anexo ou colada). Não invente, não traduza e não altere os nomes. Se não houver um nome exato, escolha o mais próximo que exista na lista.
+- Se você não recebeu a lista, peça que eu a envie antes de montar o treino.
 - Não adicione fotos, comentários ou campos além dos mostrados acima.`
 
 // Remove acentos e normaliza para comparar nomes de exercícios.
