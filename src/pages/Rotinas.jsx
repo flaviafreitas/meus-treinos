@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { supabase } from '../supabaseClient'
 import { useAuth } from '../context/AuthContext'
 import Modal from '../components/Modal'
+import ImportarTreino from '../components/ImportarTreino'
 
 export default function Rotinas() {
   const { user, signOut } = useAuth()
@@ -11,6 +12,7 @@ export default function Rotinas() {
   const [erro, setErro] = useState('')
 
   const [modalAberto, setModalAberto] = useState(false)
+  const [modalImportar, setModalImportar] = useState(false)
   const [editando, setEditando] = useState(null) // rotina em edição ou null
   const [nome, setNome] = useState('')
   const [salvando, setSalvando] = useState(false)
@@ -70,9 +72,18 @@ export default function Rotinas() {
           <h1>Meus Treinos</h1>
           <span className="cabecalho__sub">{user?.email}</span>
         </div>
-        <button type="button" className="btn btn--fantasma btn--pequeno" onClick={signOut}>
-          Sair
-        </button>
+        <div className="cabecalho__acoes">
+          <button
+            type="button"
+            className="btn btn--fantasma btn--pequeno"
+            onClick={() => setModalImportar(true)}
+          >
+            🤖 Montar com IA
+          </button>
+          <button type="button" className="btn btn--fantasma btn--pequeno" onClick={signOut}>
+            Sair
+          </button>
+        </div>
       </header>
 
       <main className="conteudo">
@@ -128,6 +139,14 @@ export default function Rotinas() {
             {salvando ? 'Salvando…' : 'Salvar'}
           </button>
         </form>
+      </Modal>
+
+      <Modal
+        titulo="Montar treino com IA"
+        aberto={modalImportar}
+        onFechar={() => setModalImportar(false)}
+      >
+        <ImportarTreino onImportado={carregar} />
       </Modal>
     </div>
   )

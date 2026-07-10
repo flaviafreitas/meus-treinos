@@ -143,6 +143,7 @@ input, textarea {
   h1 { font-size: 20px; }
   &__sub { font-size: 12px; color: $texto-fraco; }
   &__titulo { font-size: 18px; flex: 1; }
+  &__acoes { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
 }
 
 .conteudo { padding: 16px; }
@@ -267,6 +268,46 @@ input, textarea {
   background: linear-gradient(135deg, $primaria, $primaria-esc);
   box-shadow: $sombra;
   &:active { transform: translateX(-50%) scale(0.97); }
+}
+
+/* ---------- Importar treino com IA ---------- */
+.importar {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  &__passos {
+    margin: 0;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: $texto-fraco;
+    strong { color: $texto; }
+  }
+
+  &__ver {
+    font-size: 13px;
+    color: $texto-fraco;
+    summary { cursor: pointer; user-select: none; }
+  }
+
+  &__prompt {
+    margin: 10px 0 0;
+    max-height: 220px;
+    overflow: auto;
+    background: $fundo;
+    border: 1px solid $borda;
+    border-radius: $raio-sm;
+    padding: 12px;
+    font-size: 12px;
+    line-height: 1.5;
+    color: $texto;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
 }
 
 /* ---------- Login ---------- */
