@@ -253,21 +253,35 @@ input, textarea {
 }
 
 /* ---------- Botão flutuante ---------- */
-.fab {
+.fab-grupo {
   position: fixed;
   left: 50%;
   transform: translateX(-50%);
   bottom: max(20px, env(safe-area-inset-bottom));
   z-index: 6;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  max-width: calc(100% - 32px);
+}
+
+.fab {
   border: none;
   border-radius: 999px;
   padding: 16px 26px;
   font-size: 16px;
   font-weight: 700;
   color: #04252b;
+  white-space: nowrap;
   background: linear-gradient(135deg, $primaria, $primaria-esc);
   box-shadow: $sombra;
-  &:active { transform: translateX(-50%) scale(0.97); }
+  &:active { transform: scale(0.97); }
+
+  &--secundario {
+    color: $texto;
+    background: $fundo-3;
+    border: 1px solid $borda;
+  }
 }
 
 /* ---------- Importar treino com IA ---------- */

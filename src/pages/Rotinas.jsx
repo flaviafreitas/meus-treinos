@@ -73,13 +73,6 @@ export default function Rotinas() {
           <span className="cabecalho__sub">{user?.email}</span>
         </div>
         <div className="cabecalho__acoes">
-          <button
-            type="button"
-            className="btn btn--fantasma btn--pequeno"
-            onClick={() => setModalImportar(true)}
-          >
-            🤖 Montar com IA
-          </button>
           <button type="button" className="btn btn--fantasma btn--pequeno" onClick={signOut}>
             Sair
           </button>
@@ -115,9 +108,18 @@ export default function Rotinas() {
         </ul>
       </main>
 
-      <button type="button" className="fab" onClick={abrirNova}>
-        + Nova rotina
-      </button>
+      <div className="fab-grupo">
+        <button
+          type="button"
+          className="fab fab--secundario"
+          onClick={() => setModalImportar(true)}
+        >
+          📥 Importar rotina
+        </button>
+        <button type="button" className="fab" onClick={abrirNova}>
+          + Nova rotina
+        </button>
+      </div>
 
       <Modal
         titulo={editando ? 'Editar rotina' : 'Nova rotina'}
