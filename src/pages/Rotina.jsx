@@ -1,16 +1,50 @@
 import { useEffect, useRef, useState } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { Link, useParams, useNavigate } from 'react-router-dom'
 import { supabase, FOTOS_BUCKET } from '../supabaseClient'
 import { useAuth } from '../context/AuthContext'
 import Modal from '../components/Modal'
 import BibliotecaExercicios from '../components/BibliotecaExercicios'
 import ExercicioDetalhe from '../components/ExercicioDetalhe'
+import TabBar from '../components/TabBar'
 
 const FORM_VAZIO = { nome: '', series: '', repeticoes: '', observacoes: '' }
+
+function IconVoltar() {
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <path d="M15 6l-6 6 6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  )
+}
+
+function IconEditar() {
+  return (
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+      <path d="M4 20h4L18.5 9.5a2.1 2.1 0 0 0-3-3L5 17v3z" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  )
+}
+
+function IconLixeira() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+      <path d="M4 7h16M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2M7 7l1 12a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1l1-12" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  )
+}
+
+function IconMais() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+      <path d="M12 5v14M5 12h14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+    </svg>
+  )
+}
 
 export default function Rotina() {
   const { id } = useParams()
   const { user } = useAuth()
+  const navigate = useNavigate()
 
   const [rotina, setRotina] = useState(null)
   const [exercicios, setExercicios] = useState([])
@@ -194,6 +228,16 @@ export default function Rotina() {
     carregar()
   }
 
+  async function excluirRotina() {
+    if (!confirm(`Excluir a rotina "${rotina?.nome ?? ''}" e todos os exercícios?`)) return
+    await supabase.from('rotinas').delete().eq('id', id)
+    navigate('/')
+  }
+
+  function iniciarTreino() {
+    if (exercicios.length) setVerEx(exercicios[0])
+  }
+
   // ---- Reordenar exercícios (arrastar e soltar) ----
   function aoPegar(e, ex) {
     e.currentTarget.setPointerCapture?.(e.pointerId)
@@ -248,13 +292,12 @@ export default function Rotina() {
   }
 
   return (
-    <div className="pagina">
-      <header className="cabecalho">
-        <Link to="/" className="btn btn--outline btn--small btn--auto">← Voltar</Link>
+    <div className="detail">
+      <header className="detail__header">
         {editandoNome ? (
-          <form className="editar-nome" onSubmit={salvarNome}>
+          <form className="detail__rename" onSubmit={salvarNome}>
             <input
-              className="editar-nome__campo"
+              className="input"
               value={nomeRascunho}
               onChange={(e) => setNomeRascunho(e.target.value)}
               onKeyDown={(e) => {
@@ -263,98 +306,91 @@ export default function Rotina() {
               aria-label="Nome do treino"
               autoFocus
             />
-            <button
-              type="submit"
-              className="btn btn--primary btn--small btn--auto"
-              disabled={salvandoNome}
-              aria-label="Salvar nome"
-            >
-              ✓
-            </button>
-            <button
-              type="button"
-              className="btn btn--outline btn--small btn--auto"
-              onClick={() => setEditandoNome(false)}
-              aria-label="Cancelar"
-            >
-              ✕
-            </button>
+            <button type="submit" className="detail__icon" disabled={salvandoNome} aria-label="Salvar nome">✓</button>
+            <button type="button" className="detail__icon" onClick={() => setEditandoNome(false)} aria-label="Cancelar">✕</button>
           </form>
         ) : (
           <>
-            <h1 className="cabecalho__titulo">{rotina?.nome ?? 'Rotina'}</h1>
-            <div className="cabecalho__acoes">
-              <button
-                type="button"
-                onClick={abrirNome}
-                disabled={!rotina}
-                aria-label="Editar nome do treino"
-              >
-                ✏️
-              </button>
-            </div>
+            <Link to="/" className="detail__back" aria-label="Voltar"><IconVoltar /></Link>
+            <h1 className="detail__title">{rotina?.nome ?? 'Rotina'}</h1>
+            <button type="button" className="detail__edit" onClick={abrirNome} disabled={!rotina} aria-label="Editar nome do treino">
+              <IconEditar />
+            </button>
           </>
         )}
       </header>
 
-      <main className="conteudo">
-        {carregando && <p className="vazio">Carregando…</p>}
-        {erro && <p className="alerta alerta--erro">{erro}</p>}
+      {!editandoNome && (
+        <div className="detail__tags">
+          <span className="detail__tag">{exercicios.length} exercícios</span>
+        </div>
+      )}
 
-        {!carregando && exercicios.length === 0 && !erro && (
-          <div className="vazio">
-            <p>Nenhum exercício ainda.</p>
-            <p>Toque em <strong>+ Adicionar exercício</strong>. 🏋️</p>
-          </div>
-        )}
+      {carregando && <p className="detail__empty">Carregando…</p>}
+      {erro && <p className="alerta alerta--erro">{erro}</p>}
+      {!carregando && exercicios.length === 0 && !erro && (
+        <p className="detail__empty">Nenhum exercício ainda. Toque em “Adicionar exercício”.</p>
+      )}
 
-        <ul className="lista-exercicios">
-          {exercicios.map((ex) => (
-            <li
-              key={ex.id}
-              ref={(el) => {
-                itemRefs.current[ex.id] = el
-              }}
-              className={`card-ex${arrastandoId === ex.id ? ' card-ex--arrastando' : ''}`}
+      <ul className="detail__list">
+        {exercicios.map((ex) => (
+          <li
+            key={ex.id}
+            ref={(el) => {
+              itemRefs.current[ex.id] = el
+            }}
+            className={`exercise-card${arrastandoId === ex.id ? ' exercise-card--dragging' : ''}`}
+          >
+            <button
+              type="button"
+              className="exercise-card__drag"
+              aria-label="Reordenar exercício"
+              onPointerDown={(e) => aoPegar(e, ex)}
+              onPointerMove={aoMover}
+              onPointerUp={aoSoltar}
+              onPointerCancel={aoSoltar}
             >
-              <button
-                type="button"
-                className="card-ex__arrastar"
-                aria-label="Reordenar exercício"
-                onPointerDown={(e) => aoPegar(e, ex)}
-                onPointerMove={aoMover}
-                onPointerUp={aoSoltar}
-                onPointerCancel={aoSoltar}
-              >
-                ⠿
-              </button>
-              <button type="button" className="card-ex__abrir" onClick={() => setVerEx(ex)}>
-                {ex.foto_url ? (
-                  <img className="card-ex__foto" src={ex.foto_url} alt={ex.nome} loading="lazy" />
-                ) : (
-                  <div className="card-ex__foto card-ex__foto--vazia">💪</div>
+              ⠿
+            </button>
+            <button type="button" className="exercise-card__open" onClick={() => setVerEx(ex)}>
+              {ex.foto_url ? (
+                <img className="exercise-card__thumb" src={ex.foto_url} alt="" loading="lazy" />
+              ) : (
+                <span className="exercise-card__thumb exercise-card__thumb--empty">💪</span>
+              )}
+              <span className="exercise-card__info">
+                <span className="exercise-card__name">{ex.nome}</span>
+                {(ex.series || ex.repeticoes) && (
+                  <span className="exercise-card__stats">
+                    {ex.series ? <span className="exercise-card__stat">{ex.series} séries</span> : null}
+                    {ex.repeticoes ? <span className="exercise-card__stat">{ex.repeticoes} reps</span> : null}
+                  </span>
                 )}
-                <div className="card-ex__info">
-                  <h3>{ex.nome}</h3>
-                  <p className="card-ex__nums">
-                    {ex.series ? <span>{ex.series} séries</span> : null}
-                    {ex.repeticoes ? <span>{ex.repeticoes} reps</span> : null}
-                  </p>
-                  {ex.observacoes && <p className="card-ex__obs">{ex.observacoes}</p>}
-                </div>
-              </button>
-              <div className="card-ex__acoes">
-                <button type="button" onClick={() => abrirEdicao(ex)} aria-label="Editar">✏️</button>
-                <button type="button" onClick={() => excluir(ex)} aria-label="Excluir">🗑️</button>
-              </div>
-            </li>
-          ))}
-        </ul>
-      </main>
+              </span>
+            </button>
+            <button type="button" className="exercise-card__delete" onClick={() => excluir(ex)} aria-label="Excluir exercício">
+              <IconLixeira />
+            </button>
+          </li>
+        ))}
+      </ul>
 
-      <button type="button" className="fab" onClick={abrirNovo}>
-        + Adicionar exercício
-      </button>
+      <div className="detail__add">
+        <button type="button" className="btn btn--text" onClick={abrirNovo}>
+          Adicionar exercício <IconMais />
+        </button>
+      </div>
+
+      <div className="detail__bottom">
+        {rotina && (
+          <button type="button" className="detail__danger" onClick={excluirRotina}>Excluir rotina</button>
+        )}
+        <button type="button" className="btn btn--primary" onClick={iniciarTreino} disabled={!exercicios.length}>
+          Iniciar treino
+        </button>
+      </div>
+
+      <TabBar active="inicio" />
 
       <Modal
         titulo={
@@ -465,6 +501,13 @@ export default function Rotina() {
 
       <Modal titulo={verEx?.nome ?? ''} aberto={!!verEx} onFechar={() => setVerEx(null)}>
         <ExercicioDetalhe exercicio={verEx} />
+        <button
+          type="button"
+          className="btn btn--outline detail__ver-editar"
+          onClick={() => { const ex = verEx; setVerEx(null); abrirEdicao(ex) }}
+        >
+          Editar exercício
+        </button>
       </Modal>
     </div>
   )
