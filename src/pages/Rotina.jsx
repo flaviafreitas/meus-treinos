@@ -250,7 +250,7 @@ export default function Rotina() {
   return (
     <div className="pagina">
       <header className="cabecalho">
-        <Link to="/" className="btn btn--fantasma btn--pequeno">← Voltar</Link>
+        <Link to="/" className="btn btn--outline btn--small btn--auto">← Voltar</Link>
         {editandoNome ? (
           <form className="editar-nome" onSubmit={salvarNome}>
             <input
@@ -265,7 +265,7 @@ export default function Rotina() {
             />
             <button
               type="submit"
-              className="btn btn--primario btn--pequeno"
+              className="btn btn--primary btn--small btn--auto"
               disabled={salvandoNome}
               aria-label="Salvar nome"
             >
@@ -273,7 +273,7 @@ export default function Rotina() {
             </button>
             <button
               type="button"
-              className="btn btn--fantasma btn--pequeno"
+              className="btn btn--outline btn--small btn--auto"
               onClick={() => setEditandoNome(false)}
               aria-label="Cancelar"
             >
@@ -375,7 +375,7 @@ export default function Rotina() {
             </div>
             <button
               type="button"
-              className="btn btn--fantasma escolher-ex__criar"
+              className="btn btn--outline escolher-ex__criar"
               onClick={criarDoZero}
             >
               ✏️ Criar exercício do zero
@@ -386,7 +386,7 @@ export default function Rotina() {
             {!editando && (
               <button
                 type="button"
-                className="btn btn--fantasma btn--pequeno voltar-bib"
+                className="btn btn--outline btn--small btn--auto voltar-bib"
                 onClick={() => setEtapa('escolher')}
               >
                 ← Escolher da biblioteca
@@ -399,7 +399,7 @@ export default function Rotina() {
             ) : (
               <div className="foto-upload__vazio">Sem foto</div>
             )}
-            <label className="btn btn--fantasma btn--pequeno">
+            <label className="btn btn--outline btn--small btn--auto">
               {previewFoto ? 'Trocar foto' : 'Adicionar foto'}
               <input
                 type="file"
@@ -456,7 +456,7 @@ export default function Rotina() {
 
           {erro && <p className="alerta alerta--erro">{erro}</p>}
 
-            <button type="submit" className="btn btn--primario" disabled={salvando}>
+            <button type="submit" className="btn btn--primary" disabled={salvando}>
               {salvando ? 'Salvando…' : 'Salvar exercício'}
             </button>
           </form>

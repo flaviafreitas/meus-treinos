@@ -73,7 +73,7 @@ export default function Rotinas() {
           <span className="cabecalho__sub">{user?.email}</span>
         </div>
         <div className="cabecalho__acoes">
-          <button type="button" className="btn btn--fantasma btn--pequeno" onClick={signOut}>
+          <button type="button" className="btn btn--outline btn--small btn--auto" onClick={signOut}>
             Sair
           </button>
         </div>
@@ -137,7 +137,7 @@ export default function Rotinas() {
               required
             />
           </label>
-          <button type="submit" className="btn btn--primario" disabled={salvando}>
+          <button type="submit" className="btn btn--primary" disabled={salvando}>
             {salvando ? 'Salvando…' : 'Salvar'}
           </button>
         </form>

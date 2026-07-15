@@ -53,7 +53,7 @@ export default function ImportarTreino({ onImportado }) {
         <li>Copie a resposta do ChatGPT, cole aqui embaixo e toque em <strong>Importar</strong>.</li>
       </ol>
 
-      <button type="button" className="btn btn--fantasma" onClick={copiarPrompt}>
+      <button type="button" className="btn btn--outline" onClick={copiarPrompt}>
         {copiado ? '✓ Copiado!' : '📋 Copiar instrução pro ChatGPT'}
       </button>
 
@@ -77,7 +77,7 @@ export default function ImportarTreino({ onImportado }) {
 
       <button
         type="button"
-        className="btn btn--primario"
+        className="btn btn--primary"
         onClick={importar}
         disabled={importando || !texto.trim()}
       >
