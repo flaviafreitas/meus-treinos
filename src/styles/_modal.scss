@@ -1,0 +1,62 @@
+@use 'variables' as *;
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+
+  &__caixa {
+    width: 100%;
+    max-width: $screen-max;
+    max-height: 92vh;
+    overflow-y: auto;
+    background: $color-bg;
+    border-radius: $radius-24 $radius-24 0 0;
+    border: 1px solid $color-border;
+    animation: sobe 0.2s ease;
+  }
+
+  &__topo {
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: $space-16;
+    background: $color-bg;
+    border-bottom: 1px solid $color-border;
+
+    h2 {
+      font-family: $font-family;
+      font-size: $font-18;
+      font-weight: $weight-bold;
+      color: $color-text;
+    }
+  }
+
+  &__fechar {
+    border: none;
+    background: transparent;
+    color: $color-text-muted;
+    font-size: 18px;
+  }
+
+  &__corpo {
+    padding: $space-16;
+    padding-bottom: max(#{$space-20}, env(safe-area-inset-bottom));
+  }
+}
+
+@keyframes sobe {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@media (min-width: 520px) {
+  .modal { align-items: center; }
+  .modal__caixa { border-radius: $radius-24; }
+}
