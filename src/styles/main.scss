@@ -3,6 +3,8 @@
 @use 'buttons';
 @use 'forms';
 @use 'auth';
+@use 'home';
+@use 'tabbar';
 
 /* ---------- Base ---------- */
 * { box-sizing: border-box; }
@@ -129,42 +131,6 @@ input, textarea {
   color: $texto-fraco;
   padding: 40px 16px;
   line-height: 1.6;
-}
-
-/* ---------- Lista de rotinas ---------- */
-.lista-rotinas { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
-
-.card-rotina {
-  display: flex;
-  align-items: stretch;
-  background: $fundo-2;
-  border: 1px solid $borda;
-  border-radius: $raio;
-  overflow: hidden;
-
-  &__link {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    padding: 16px;
-  }
-  &__nome { font-size: 17px; font-weight: 700; }
-  &__contagem { font-size: 13px; color: $texto-fraco; }
-
-  &__acoes {
-    display: flex;
-    flex-direction: column;
-    border-left: 1px solid $borda;
-    button {
-      flex: 1;
-      background: transparent;
-      border: none;
-      padding: 0 16px;
-      font-size: 16px;
-      &:first-child { border-bottom: 1px solid $borda; }
-    }
-  }
 }
 
 /* ---------- Lista de exercícios ---------- */
@@ -328,18 +294,6 @@ input, textarea {
 }
 
 /* ---------- Botão flutuante ---------- */
-.fab-grupo {
-  position: fixed;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: max(20px, env(safe-area-inset-bottom));
-  z-index: 6;
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  max-width: calc(100% - 32px);
-}
-
 .fab {
   border: none;
   border-radius: 999px;
@@ -351,12 +305,6 @@ input, textarea {
   background: linear-gradient(135deg, $primaria, $primaria-esc);
   box-shadow: $sombra;
   &:active { transform: scale(0.97); }
-
-  &--secundario {
-    color: $texto;
-    background: $fundo-3;
-    border: 1px solid $borda;
-  }
 }
 
 /* ---------- Importar treino com IA ---------- */
