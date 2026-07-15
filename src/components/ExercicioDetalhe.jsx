@@ -1,7 +1,5 @@
 import { useEffect, useState } from 'react'
 
-// As imagens da free-exercise-db vêm em dois quadros: .../0.jpg (início) e
-// .../1.jpg (fim). A partir do 1º quadro dá pra derivar o 2º e animar o movimento.
 function segundoQuadro(url) {
   if (!url || !url.includes('free-exercise-db')) return null
   if (!/\/0\.jpg$/i.test(url)) return null
@@ -12,7 +10,6 @@ export default function ExercicioDetalhe({ exercicio }) {
   const [frames, setFrames] = useState([])
   const [i, setI] = useState(0)
 
-  // Monta os quadros: começa só com a foto atual e adiciona o 2º se ele existir.
   useEffect(() => {
     setI(0)
     const base = exercicio?.foto_url
@@ -24,7 +21,6 @@ export default function ExercicioDetalhe({ exercicio }) {
     img.src = seg
   }, [exercicio])
 
-  // Alterna os quadros = efeito "gif" de 2 frames (início ↔ fim).
   useEffect(() => {
     if (frames.length < 2) return
     const t = setInterval(() => setI((v) => (v + 1) % frames.length), 800)
@@ -36,23 +32,38 @@ export default function ExercicioDetalhe({ exercicio }) {
 
   return (
     <div className="single">
-      <div className="single__midia">
+      <div className="single__media">
         {frames.length ? (
-          <img className="single__foto" src={frames[i]} alt={exercicio.nome} />
+          <img className="single__img" src={frames[i]} alt={exercicio.nome} />
         ) : (
-          <div className="single__foto single__foto--vazia">💪</div>
+          <div className="single__img single__img--empty">💪</div>
         )}
-        {animando && <span className="single__badge">animação ▶</span>}
+        {animando && <span className="single__badge">animação</span>}
       </div>
 
       {(exercicio.series || exercicio.repeticoes) && (
-        <div className="single__nums">
-          {exercicio.series ? <span>{exercicio.series} séries</span> : null}
-          {exercicio.repeticoes ? <span>{exercicio.repeticoes} reps</span> : null}
+        <div className="single__stats">
+          {exercicio.series ? (
+            <div className="single__stat">
+              <span className="single__stat-value">{exercicio.series}</span>
+              <span className="single__stat-label">séries</span>
+            </div>
+          ) : null}
+          {exercicio.repeticoes ? (
+            <div className="single__stat">
+              <span className="single__stat-value">{exercicio.repeticoes}</span>
+              <span className="single__stat-label">reps</span>
+            </div>
+          ) : null}
         </div>
       )}
 
-      {exercicio.observacoes && <p className="single__obs">{exercicio.observacoes}</p>}
+      {exercicio.observacoes && (
+        <div className="single__notes">
+          <span className="single__notes-title">Observações</span>
+          <p className="single__notes-text">{exercicio.observacoes}</p>
+        </div>
+      )}
     </div>
   )
 }
