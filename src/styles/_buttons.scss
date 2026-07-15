@@ -44,3 +44,13 @@
   color: $color-primary;
   font-size: $font-16;
 }
+
+.btn--small {
+  height: 36px;
+  padding: 0 $space-12;
+  font-size: $font-14;
+}
+
+.btn--auto {
+  width: auto;
+}
