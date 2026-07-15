@@ -1,0 +1,71 @@
+@use 'variables' as *;
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: $space-8;
+}
+
+.field__label {
+  font-family: $font-family;
+  font-size: $font-14;
+  font-weight: $weight-medium;
+  color: $color-text-muted;
+}
+
+.input,
+.textarea {
+  width: 100%;
+  background: $color-surface-1;
+  border: 1px solid $color-border;
+  border-radius: $radius-12;
+  color: $color-text;
+  font-family: $font-family;
+  font-size: $font-16;
+  padding: 12px 14px;
+  outline: none;
+  transition: border-color 0.15s ease;
+
+  &::placeholder { color: $color-text-muted; }
+  &:focus { border-color: $color-primary; }
+  &:disabled { opacity: 0.6; }
+}
+
+.textarea {
+  min-height: 96px;
+  line-height: 1.5;
+  resize: vertical;
+}
+
+.field-row {
+  display: flex;
+  gap: $space-12;
+
+  .field { flex: 1; }
+}
+
+.search { position: relative; }
+
+.search__input {
+  width: 100%;
+  background: $color-surface-1;
+  border: 1px solid $color-border;
+  border-radius: $radius-12;
+  color: $color-text;
+  font-family: $font-family;
+  font-size: $font-16;
+  padding: 12px 14px 12px 42px;
+  outline: none;
+
+  &::placeholder { color: $color-text-muted; }
+  &:focus { border-color: $color-primary; }
+}
+
+.search__icon {
+  position: absolute;
+  top: 50%;
+  left: 14px;
+  transform: translateY(-50%);
+  color: $color-text-muted;
+  pointer-events: none;
+}
