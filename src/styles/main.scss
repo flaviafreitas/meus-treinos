@@ -202,6 +202,31 @@ input, textarea {
   border-radius: $raio;
   padding: 12px;
 
+  &--arrastando {
+    border-color: $primaria;
+    box-shadow: $sombra;
+    opacity: 0.92;
+  }
+
+  // Alça de arraste para reordenar o exercício.
+  &__arrastar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: stretch;
+    flex-shrink: 0;
+    padding: 0 2px;
+    background: transparent;
+    border: none;
+    color: $texto-fraco;
+    font-size: 20px;
+    line-height: 1;
+    cursor: grab;
+    touch-action: none; // não deixa a página rolar ao arrastar
+    user-select: none;
+    &:active { cursor: grabbing; }
+  }
+
   &__foto {
     width: 76px;
     height: 76px;

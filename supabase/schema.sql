@@ -27,6 +27,19 @@ create table if not exists public.exercicios (
 
 create index if not exists idx_exercicios_rotina on public.exercicios (rotina_id);
 
+-- Ordem manual dos exercícios (arrastar e soltar na página do treino).
+alter table public.exercicios add column if not exists posicao integer;
+
+-- Backfill: numera os exercícios existentes por rotina na ordem de criação.
+update public.exercicios e
+set posicao = sub.rn
+from (
+  select id,
+         row_number() over (partition by rotina_id order by created_at) - 1 as rn
+  from public.exercicios
+) sub
+where e.id = sub.id and e.posicao is null;
+
 -- 3) Segurança: cada pessoa só acessa os PRÓPRIOS dados ---------------
 alter table public.rotinas    enable row level security;
 alter table public.exercicios enable row level security;

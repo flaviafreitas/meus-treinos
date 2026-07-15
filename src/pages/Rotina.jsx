@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { supabase, FOTOS_BUCKET } from '../supabaseClient'
 import { useAuth } from '../context/AuthContext'
@@ -25,19 +25,39 @@ export default function Rotina() {
   const [salvando, setSalvando] = useState(false)
   const [etapa, setEtapa] = useState('escolher') // 'escolher' | 'detalhes'
   const [verEx, setVerEx] = useState(null) // exercício aberto na tela single
+  const [arrastandoId, setArrastandoId] = useState(null) // exercício sendo arrastado
+
+  // Espelho da lista para acessar a ordem mais recente ao soltar (sem stale closure).
+  const exerciciosRef = useRef([])
+  const itemRefs = useRef({}) // elementos <li> para medir posições durante o arraste
+  useEffect(() => {
+    exerciciosRef.current = exercicios
+  }, [exercicios])
 
   async function carregar() {
     setCarregando(true)
     setErro('')
-    const [{ data: rot }, { data: exs, error }] = await Promise.all([
-      supabase.from('rotinas').select('id, nome').eq('id', id).single(),
-      supabase
+    const { data: rot } = await supabase
+      .from('rotinas')
+      .select('id, nome')
+      .eq('id', id)
+      .single()
+    setRotina(rot ?? null)
+
+    let { data: exs, error } = await supabase
+      .from('exercicios')
+      .select('*')
+      .eq('rotina_id', id)
+      .order('posicao', { ascending: true, nullsFirst: false })
+      .order('created_at', { ascending: true })
+    // Fallback caso a coluna "posicao" ainda não exista no banco.
+    if (error) {
+      ;({ data: exs, error } = await supabase
         .from('exercicios')
         .select('*')
         .eq('rotina_id', id)
-        .order('created_at', { ascending: true }),
-    ])
-    setRotina(rot ?? null)
+        .order('created_at', { ascending: true }))
+    }
     if (error) setErro(error.message)
     else setExercicios(exs ?? [])
     setCarregando(false)
@@ -124,7 +144,12 @@ export default function Rotina() {
       } else {
         await supabase
           .from('exercicios')
-          .insert({ ...registro, rotina_id: id, user_id: user.id })
+          .insert({
+            ...registro,
+            rotina_id: id,
+            user_id: user.id,
+            posicao: exercicios.length,
+          })
       }
       setModalAberto(false)
       carregar()
@@ -139,6 +164,59 @@ export default function Rotina() {
     if (!confirm(`Excluir o exercício "${ex.nome}"?`)) return
     await supabase.from('exercicios').delete().eq('id', ex.id)
     carregar()
+  }
+
+  // ---- Reordenar exercícios (arrastar e soltar) ----
+  function aoPegar(e, ex) {
+    e.currentTarget.setPointerCapture?.(e.pointerId)
+    setArrastandoId(ex.id)
+  }
+
+  function aoMover(e) {
+    if (!arrastandoId) return
+    const y = e.clientY
+    setExercicios((prev) => {
+      const de = prev.findIndex((x) => x.id === arrastandoId)
+      if (de === -1) return prev
+      // Índice de destino = nº de cards (fora o arrastado) com o meio acima do ponteiro.
+      let para = 0
+      for (const item of prev) {
+        if (item.id === arrastandoId) continue
+        const el = itemRefs.current[item.id]
+        if (!el) continue
+        const r = el.getBoundingClientRect()
+        if (y > r.top + r.height / 2) para++
+      }
+      if (para === de) return prev
+      const arr = [...prev]
+      const [movido] = arr.splice(de, 1)
+      arr.splice(para, 0, movido)
+      return arr
+    })
+  }
+
+  async function aoSoltar(e) {
+    e.currentTarget.releasePointerCapture?.(e.pointerId)
+    if (!arrastandoId) return
+    setArrastandoId(null)
+
+    const lista = exerciciosRef.current
+    const mudaram = lista
+      .map((ex, i) => ({ ex, i }))
+      .filter(({ ex, i }) => ex.posicao !== i)
+    if (mudaram.length === 0) return
+
+    setExercicios((prev) => prev.map((ex, i) => ({ ...ex, posicao: i })))
+    const resultados = await Promise.all(
+      mudaram.map(({ ex, i }) =>
+        supabase.from('exercicios').update({ posicao: i }).eq('id', ex.id),
+      ),
+    )
+    const falha = resultados.find((r) => r.error)
+    if (falha) {
+      setErro(falha.error.message)
+      carregar()
+    }
   }
 
   return (
@@ -161,7 +239,24 @@ export default function Rotina() {
 
         <ul className="lista-exercicios">
           {exercicios.map((ex) => (
-            <li key={ex.id} className="card-ex">
+            <li
+              key={ex.id}
+              ref={(el) => {
+                itemRefs.current[ex.id] = el
+              }}
+              className={`card-ex${arrastandoId === ex.id ? ' card-ex--arrastando' : ''}`}
+            >
+              <button
+                type="button"
+                className="card-ex__arrastar"
+                aria-label="Reordenar exercício"
+                onPointerDown={(e) => aoPegar(e, ex)}
+                onPointerMove={aoMover}
+                onPointerUp={aoSoltar}
+                onPointerCancel={aoSoltar}
+              >
+                ⠿
+              </button>
               <button type="button" className="card-ex__abrir" onClick={() => setVerEx(ex)}>
                 {ex.foto_url ? (
                   <img className="card-ex__foto" src={ex.foto_url} alt={ex.nome} loading="lazy" />
