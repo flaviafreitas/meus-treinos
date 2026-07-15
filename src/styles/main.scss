@@ -5,6 +5,7 @@
 @use 'auth';
 @use 'home';
 @use 'tabbar';
+@use 'detail';
 
 /* ---------- Base ---------- */
 * { box-sizing: border-box; }
@@ -70,171 +71,6 @@ input, textarea {
   .campo { flex: 1; }
 }
 
-/* ---------- Layout de página ---------- */
-.pagina {
-  max-width: $largura-max;
-  margin: 0 auto;
-  min-height: 100%;
-  padding-bottom: 96px; // espaço para o botão flutuante
-}
-
-.cabecalho {
-  position: sticky;
-  top: 0;
-  z-index: 5;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  justify-content: space-between;
-  padding: max(16px, env(safe-area-inset-top)) 16px 14px;
-  background: rgba($fundo, 0.85);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid $borda;
-
-  h1 { font-size: 20px; }
-  &__sub { font-size: 12px; color: $texto-fraco; }
-  &__titulo { font-size: 18px; flex: 1; }
-  &__acoes {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    flex-shrink: 0;
-    button { background: transparent; border: none; font-size: 17px; padding: 4px; }
-  }
-}
-
-// Edição inline do nome do treino no cabeçalho.
-.editar-nome {
-  flex: 1;
-  min-width: 0;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-
-  &__campo {
-    flex: 1;
-    min-width: 0;
-    font-size: 18px;
-    font-weight: 600;
-    color: $texto;
-    background: $fundo-2;
-    border: 1px solid $borda;
-    border-radius: $raio-sm;
-    padding: 8px 10px;
-  }
-}
-
-.conteudo { padding: 16px; }
-
-.vazio {
-  text-align: center;
-  color: $texto-fraco;
-  padding: 40px 16px;
-  line-height: 1.6;
-}
-
-/* ---------- Lista de exercícios ---------- */
-.lista-exercicios { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
-
-.card-ex {
-  display: flex;
-  gap: 12px;
-  background: $fundo-2;
-  border: 1px solid $borda;
-  border-radius: $raio;
-  padding: 12px;
-
-  &--arrastando {
-    border-color: $primaria;
-    box-shadow: $sombra;
-    opacity: 0.92;
-  }
-
-  // Alça de arraste para reordenar o exercício.
-  &__arrastar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    align-self: stretch;
-    flex-shrink: 0;
-    padding: 0 2px;
-    background: transparent;
-    border: none;
-    color: $texto-fraco;
-    font-size: 20px;
-    line-height: 1;
-    cursor: grab;
-    touch-action: none; // não deixa a página rolar ao arrastar
-    user-select: none;
-    &:active { cursor: grabbing; }
-  }
-
-  &__foto {
-    width: 76px;
-    height: 76px;
-    border-radius: $raio-sm;
-    object-fit: cover;
-    flex-shrink: 0;
-    background: $fundo-3;
-
-    &--vazia {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 30px;
-    }
-  }
-
-  &__info {
-    flex: 1;
-    min-width: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-
-    h3 { font-size: 16px; }
-  }
-
-  &__nums {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-    span {
-      font-size: 12px;
-      font-weight: 700;
-      color: $primaria;
-      background: rgba($primaria, 0.12);
-      padding: 3px 8px;
-      border-radius: 999px;
-    }
-  }
-
-  &__obs { font-size: 13px; color: $texto-fraco; line-height: 1.4; }
-
-  &__acoes {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    button { background: transparent; border: none; font-size: 15px; padding: 4px; }
-  }
-
-  // Área clicável (foto + info) que abre a tela single do exercício.
-  &__abrir {
-    display: flex;
-    gap: 12px;
-    align-items: center;
-    flex: 1;
-    min-width: 0;
-    background: none;
-    border: none;
-    padding: 0;
-    color: inherit;
-    text-align: left;
-    cursor: pointer;
-    &:active { opacity: 0.7; }
-  }
-}
-
 /* ---------- Tela single do exercício ---------- */
 .single {
   display: flex;
@@ -291,20 +127,6 @@ input, textarea {
     color: $texto-fraco;
     line-height: 1.5;
   }
-}
-
-/* ---------- Botão flutuante ---------- */
-.fab {
-  border: none;
-  border-radius: 999px;
-  padding: 16px 26px;
-  font-size: 16px;
-  font-weight: 700;
-  color: #04252b;
-  white-space: nowrap;
-  background: linear-gradient(135deg, $primaria, $primaria-esc);
-  box-shadow: $sombra;
-  &:active { transform: scale(0.97); }
 }
 
 /* ---------- Importar treino com IA ---------- */
