@@ -27,6 +27,10 @@ export default function Rotina() {
   const [verEx, setVerEx] = useState(null) // exercício aberto na tela single
   const [arrastandoId, setArrastandoId] = useState(null) // exercício sendo arrastado
 
+  const [editandoNome, setEditandoNome] = useState(false)
+  const [nomeRascunho, setNomeRascunho] = useState('')
+  const [salvandoNome, setSalvandoNome] = useState(false)
+
   // Espelho da lista para acessar a ordem mais recente ao soltar (sem stale closure).
   const exerciciosRef = useRef([])
   const itemRefs = useRef({}) // elementos <li> para medir posições durante o arraste
@@ -67,6 +71,30 @@ export default function Rotina() {
     carregar()
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id])
+
+  function abrirNome() {
+    setNomeRascunho(rotina?.nome ?? '')
+    setEditandoNome(true)
+  }
+
+  async function salvarNome(e) {
+    e.preventDefault()
+    const nome = nomeRascunho.trim()
+    if (!nome || nome === rotina?.nome) {
+      setEditandoNome(false)
+      return
+    }
+    setSalvandoNome(true)
+    setErro('')
+    const { error } = await supabase.from('rotinas').update({ nome }).eq('id', id)
+    setSalvandoNome(false)
+    if (error) {
+      setErro(error.message)
+      return
+    }
+    setRotina((r) => ({ ...r, nome }))
+    setEditandoNome(false)
+  }
 
   function abrirNovo() {
     setEditando(null)
@@ -223,7 +251,50 @@ export default function Rotina() {
     <div className="pagina">
       <header className="cabecalho">
         <Link to="/" className="btn btn--fantasma btn--pequeno">← Voltar</Link>
-        <h1 className="cabecalho__titulo">{rotina?.nome ?? 'Rotina'}</h1>
+        {editandoNome ? (
+          <form className="editar-nome" onSubmit={salvarNome}>
+            <input
+              className="editar-nome__campo"
+              value={nomeRascunho}
+              onChange={(e) => setNomeRascunho(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === 'Escape') setEditandoNome(false)
+              }}
+              aria-label="Nome do treino"
+              autoFocus
+            />
+            <button
+              type="submit"
+              className="btn btn--primario btn--pequeno"
+              disabled={salvandoNome}
+              aria-label="Salvar nome"
+            >
+              ✓
+            </button>
+            <button
+              type="button"
+              className="btn btn--fantasma btn--pequeno"
+              onClick={() => setEditandoNome(false)}
+              aria-label="Cancelar"
+            >
+              ✕
+            </button>
+          </form>
+        ) : (
+          <>
+            <h1 className="cabecalho__titulo">{rotina?.nome ?? 'Rotina'}</h1>
+            <div className="cabecalho__acoes">
+              <button
+                type="button"
+                onClick={abrirNome}
+                disabled={!rotina}
+                aria-label="Editar nome do treino"
+              >
+                ✏️
+              </button>
+            </div>
+          </>
+        )}
       </header>
 
       <main className="conteudo">
