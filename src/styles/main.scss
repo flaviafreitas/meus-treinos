@@ -1,4 +1,8 @@
 @use 'variaveis' as *;
+@use 'fonts';
+@use 'buttons';
+@use 'forms';
+@use 'auth';
 
 /* ---------- Base ---------- */
 * { box-sizing: border-box; }
@@ -22,40 +26,6 @@ button { font-family: inherit; cursor: pointer; }
 input, textarea {
   font-family: inherit;
   font-size: 16px; // evita zoom automático no iOS
-}
-
-/* ---------- Botões ---------- */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  border: none;
-  border-radius: $raio-sm;
-  padding: 14px 18px;
-  font-size: 16px;
-  font-weight: 600;
-  color: $texto;
-  background: $fundo-3;
-  transition: filter 0.15s ease, transform 0.05s ease;
-
-  &:active { transform: scale(0.98); }
-  &:disabled { opacity: 0.6; cursor: default; }
-
-  &--primario {
-    background: linear-gradient(135deg, $primaria, $primaria-esc);
-    color: #04252b;
-  }
-  &--fantasma {
-    background: transparent;
-    border: 1px solid $borda;
-    color: $texto;
-  }
-  &--pequeno {
-    padding: 8px 12px;
-    font-size: 14px;
-    border-radius: 8px;
-  }
 }
 
 /* ---------- Alertas ---------- */
@@ -96,27 +66,6 @@ input, textarea {
   display: flex;
   gap: 12px;
   .campo { flex: 1; }
-}
-
-.segmented {
-  display: flex;
-  background: $fundo;
-  border: 1px solid $borda;
-  border-radius: $raio-sm;
-  padding: 4px;
-  gap: 4px;
-
-  button {
-    flex: 1;
-    border: none;
-    background: transparent;
-    color: $texto-fraco;
-    padding: 10px;
-    border-radius: 8px;
-    font-weight: 600;
-
-    &.is-active { background: $fundo-3; color: $texto; }
-  }
 }
 
 /* ---------- Layout de página ---------- */
@@ -447,37 +396,6 @@ input, textarea {
     color: $texto;
     white-space: pre-wrap;
     word-break: break-word;
-  }
-}
-
-/* ---------- Login ---------- */
-.login {
-  min-height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-
-  &__card {
-    width: 100%;
-    max-width: 400px;
-    background: $fundo-2;
-    border: 1px solid $borda;
-    border-radius: $raio;
-    padding: 28px 22px;
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-  }
-
-  &__logo {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 6px;
-    h1 { font-size: 24px; }
-    p { font-size: 14px; color: $texto-fraco; }
   }
 }
 
