@@ -6,6 +6,7 @@ import EsqueceuSenha from './pages/EsqueceuSenha'
 import Rotinas from './pages/Rotinas'
 import Rotina from './pages/Rotina'
 import Workout from './pages/Workout'
+import Progress from './pages/Progress'
 
 function Protegido({ children }) {
   const { session, loading } = useAuth()
@@ -58,6 +59,14 @@ export default function App() {
         element={
           <Protegido>
             <Workout />
+          </Protegido>
+        }
+      />
+      <Route
+        path="/progress"
+        element={
+          <Protegido>
+            <Progress />
           </Protegido>
         }
       />

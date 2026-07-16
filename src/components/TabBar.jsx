@@ -36,7 +36,7 @@ function IconPerfil() {
 const tabs = [
   { key: 'inicio', label: 'Início', to: '/', Icon: IconInicio },
   { key: 'treinos', label: 'Treinos', to: '/', Icon: IconTreinos },
-  { key: 'progresso', label: 'Progresso', Icon: IconProgresso },
+  { key: 'progresso', label: 'Progresso', to: '/progress', Icon: IconProgresso },
   { key: 'perfil', label: 'Perfil', Icon: IconPerfil },
 ]
 
