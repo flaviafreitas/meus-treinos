@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react'
 import biblioteca from '../data/exercicios.json'
+import Card from './Card'
 
 function IconSearch() {
   return (
@@ -68,20 +69,22 @@ export default function BibliotecaExercicios({ onEscolher }) {
 
       <ul className="picker__list">
         {visiveis.map((e) => (
-          <li key={e.id} className="picker__item">
-            <img className="picker__thumb" src={e.imagem} alt="" loading="lazy" />
-            <div className="picker__info">
-              <span className="picker__name">{e.nome}</span>
-              <span className="picker__group">{e.grupo}</span>
-            </div>
-            <button
-              type="button"
-              className="picker__add"
-              onClick={() => onEscolher(e)}
-              aria-label={`Adicionar ${e.nome}`}
-            >
-              <IconPlus />
-            </button>
+          <li key={e.id}>
+            <Card
+              image={e.imagem}
+              title={e.nome}
+              subtitle={e.grupo}
+              trailing={
+                <button
+                  type="button"
+                  className="card__add"
+                  onClick={() => onEscolher(e)}
+                  aria-label={`Adicionar ${e.nome}`}
+                >
+                  <IconPlus />
+                </button>
+              }
+            />
           </li>
         ))}
         {filtrados.length === 0 && (
