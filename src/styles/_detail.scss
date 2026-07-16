@@ -18,8 +18,7 @@
 }
 
 .detail__back,
-.detail__edit,
-.detail__icon {
+.detail__edit {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -30,6 +29,19 @@
   background: transparent;
   color: $color-text-muted;
   cursor: pointer;
+}
+
+.detail__done {
+  flex-shrink: 0;
+  border: none;
+  background: transparent;
+  color: $color-primary;
+  font-family: $font-family;
+  font-size: $font-16;
+  font-weight: $weight-bold;
+  cursor: pointer;
+
+  &:disabled { opacity: 0.5; }
 }
 
 .detail__title {
@@ -45,11 +57,11 @@
   white-space: nowrap;
 }
 
-.detail__rename {
+.detail__title-input {
   flex: 1;
-  display: flex;
-  align-items: center;
-  gap: $space-8;
+  min-width: 0;
+  font-size: $font-20;
+  font-weight: $weight-bold;
 }
 
 .detail__tags {

@@ -61,7 +61,7 @@ export default function Rotina() {
   const [verEx, setVerEx] = useState(null) // exercício aberto na tela single
   const [arrastandoId, setArrastandoId] = useState(null) // exercício sendo arrastado
 
-  const [editandoNome, setEditandoNome] = useState(false)
+  const [modoEdicao, setModoEdicao] = useState(false)
   const [nomeRascunho, setNomeRascunho] = useState('')
   const [salvandoNome, setSalvandoNome] = useState(false)
 
@@ -106,28 +106,25 @@ export default function Rotina() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id])
 
-  function abrirNome() {
+  function entrarEdicao() {
     setNomeRascunho(rotina?.nome ?? '')
-    setEditandoNome(true)
+    setModoEdicao(true)
   }
 
-  async function salvarNome(e) {
-    e.preventDefault()
+  async function concluirEdicao() {
     const nome = nomeRascunho.trim()
-    if (!nome || nome === rotina?.nome) {
-      setEditandoNome(false)
-      return
+    if (nome && nome !== rotina?.nome) {
+      setSalvandoNome(true)
+      setErro('')
+      const { error } = await supabase.from('rotinas').update({ nome }).eq('id', id)
+      setSalvandoNome(false)
+      if (error) {
+        setErro(error.message)
+        return
+      }
+      setRotina((r) => ({ ...r, nome }))
     }
-    setSalvandoNome(true)
-    setErro('')
-    const { error } = await supabase.from('rotinas').update({ nome }).eq('id', id)
-    setSalvandoNome(false)
-    if (error) {
-      setErro(error.message)
-      return
-    }
-    setRotina((r) => ({ ...r, nome }))
-    setEditandoNome(false)
+    setModoEdicao(false)
   }
 
   function abrirNovo() {
@@ -294,37 +291,33 @@ export default function Rotina() {
   return (
     <div className="detail">
       <header className="detail__header">
-        {editandoNome ? (
-          <form className="detail__rename" onSubmit={salvarNome}>
-            <input
-              className="input"
-              value={nomeRascunho}
-              onChange={(e) => setNomeRascunho(e.target.value)}
-              onKeyDown={(e) => {
-                if (e.key === 'Escape') setEditandoNome(false)
-              }}
-              aria-label="Nome do treino"
-              autoFocus
-            />
-            <button type="submit" className="detail__icon" disabled={salvandoNome} aria-label="Salvar nome">✓</button>
-            <button type="button" className="detail__icon" onClick={() => setEditandoNome(false)} aria-label="Cancelar">✕</button>
-          </form>
+        <Link to="/" className="detail__back" aria-label="Voltar"><IconVoltar /></Link>
+        {modoEdicao ? (
+          <input
+            className="input detail__title-input"
+            value={nomeRascunho}
+            onChange={(e) => setNomeRascunho(e.target.value)}
+            onKeyDown={(e) => { if (e.key === 'Enter') concluirEdicao() }}
+            aria-label="Nome do treino"
+            autoFocus
+          />
         ) : (
-          <>
-            <Link to="/" className="detail__back" aria-label="Voltar"><IconVoltar /></Link>
-            <h1 className="detail__title">{rotina?.nome ?? 'Rotina'}</h1>
-            <button type="button" className="detail__edit" onClick={abrirNome} disabled={!rotina} aria-label="Editar nome do treino">
-              <IconEditar />
-            </button>
-          </>
+          <h1 className="detail__title">{rotina?.nome ?? 'Rotina'}</h1>
+        )}
+        {modoEdicao ? (
+          <button type="button" className="detail__done" onClick={concluirEdicao} disabled={salvandoNome}>
+            Concluir
+          </button>
+        ) : (
+          <button type="button" className="detail__edit" onClick={entrarEdicao} disabled={!rotina} aria-label="Editar treino">
+            <IconEditar />
+          </button>
         )}
       </header>
 
-      {!editandoNome && (
-        <div className="detail__tags">
-          <span className="detail__tag">{exercicios.length} exercícios</span>
-        </div>
-      )}
+      <div className="detail__tags">
+        <span className="detail__tag">{exercicios.length} exercícios</span>
+      </div>
 
       {carregando && <p className="detail__empty">Carregando…</p>}
       {erro && <p className="alerta alerta--erro">{erro}</p>}
@@ -341,17 +334,19 @@ export default function Rotina() {
             }}
             className={`exercise-card${arrastandoId === ex.id ? ' exercise-card--dragging' : ''}`}
           >
-            <button
-              type="button"
-              className="exercise-card__drag"
-              aria-label="Reordenar exercício"
-              onPointerDown={(e) => aoPegar(e, ex)}
-              onPointerMove={aoMover}
-              onPointerUp={aoSoltar}
-              onPointerCancel={aoSoltar}
-            >
-              ⠿
-            </button>
+            {modoEdicao && (
+              <button
+                type="button"
+                className="exercise-card__drag"
+                aria-label="Reordenar exercício"
+                onPointerDown={(e) => aoPegar(e, ex)}
+                onPointerMove={aoMover}
+                onPointerUp={aoSoltar}
+                onPointerCancel={aoSoltar}
+              >
+                ⠿
+              </button>
+            )}
             <button type="button" className="exercise-card__open" onClick={() => setVerEx(ex)}>
               {ex.foto_url ? (
                 <img className="exercise-card__thumb" src={ex.foto_url} alt="" loading="lazy" />
@@ -368,9 +363,11 @@ export default function Rotina() {
                 )}
               </span>
             </button>
-            <button type="button" className="exercise-card__delete" onClick={() => excluir(ex)} aria-label="Excluir exercício">
-              <IconLixeira />
-            </button>
+            {modoEdicao && (
+              <button type="button" className="exercise-card__delete" onClick={() => excluir(ex)} aria-label="Excluir exercício">
+                <IconLixeira />
+              </button>
+            )}
           </li>
         ))}
       </ul>
@@ -382,12 +379,15 @@ export default function Rotina() {
       </div>
 
       <div className="detail__bottom">
-        {rotina && (
-          <button type="button" className="detail__danger" onClick={excluirRotina}>Excluir rotina</button>
+        {modoEdicao ? (
+          rotina && (
+            <button type="button" className="detail__danger" onClick={excluirRotina}>Excluir rotina</button>
+          )
+        ) : (
+          <button type="button" className="btn btn--primary" onClick={iniciarTreino} disabled={!exercicios.length}>
+            Iniciar treino
+          </button>
         )}
-        <button type="button" className="btn btn--primary" onClick={iniciarTreino} disabled={!exercicios.length}>
-          Iniciar treino
-        </button>
       </div>
 
       <TabBar active="inicio" />
