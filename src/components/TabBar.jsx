@@ -37,7 +37,7 @@ const tabs = [
   { key: 'inicio', label: 'Início', to: '/', Icon: IconInicio },
   { key: 'treinos', label: 'Treinos', to: '/', Icon: IconTreinos },
   { key: 'progresso', label: 'Progresso', to: '/progress', Icon: IconProgresso },
-  { key: 'perfil', label: 'Perfil', Icon: IconPerfil },
+  { key: 'perfil', label: 'Perfil', to: '/perfil', Icon: IconPerfil },
 ]
 
 export default function TabBar({ active = 'inicio' }) {
