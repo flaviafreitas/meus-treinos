@@ -41,6 +41,11 @@ a { color: inherit; text-decoration: none; }
 
 button { font-family: inherit; cursor: pointer; }
 
+:focus-visible {
+  outline: 2px solid $color-primary;
+  outline-offset: 2px;
+}
+
 input, textarea {
   font-family: inherit;
   font-size: 16px;
