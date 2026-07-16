@@ -48,68 +48,6 @@ input, textarea {
   &--ok   { background: rgba($sucesso, 0.15); color: $sucesso; }
 }
 
-/* ---------- Formulários ---------- */
-.campo {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-
-  span { font-size: 13px; color: $texto-fraco; font-weight: 600; }
-
-  input, textarea {
-    background: $fundo;
-    border: 1px solid $borda;
-    border-radius: $raio-sm;
-    color: $texto;
-    padding: 12px 14px;
-    outline: none;
-    resize: vertical;
-
-    &:focus { border-color: $primaria; }
-    &::placeholder { color: rgba($texto-fraco, 0.6); }
-  }
-}
-
-/* ---------- Importar treino com IA ---------- */
-.importar {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-
-  &__passos {
-    margin: 0;
-    padding-left: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    font-size: 14px;
-    line-height: 1.5;
-    color: $texto-fraco;
-    strong { color: $texto; }
-  }
-
-  &__ver {
-    font-size: 13px;
-    color: $texto-fraco;
-    summary { cursor: pointer; user-select: none; }
-  }
-
-  &__prompt {
-    margin: 10px 0 0;
-    max-height: 220px;
-    overflow: auto;
-    background: $fundo;
-    border: 1px solid $borda;
-    border-radius: $raio-sm;
-    padding: 12px;
-    font-size: 12px;
-    line-height: 1.5;
-    color: $texto;
-    white-space: pre-wrap;
-    word-break: break-word;
-  }
-}
-
 /* ---------- Carregando ---------- */
 .tela-carregando {
   min-height: 100%;
