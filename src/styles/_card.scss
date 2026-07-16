@@ -1,0 +1,136 @@
+@use 'variables' as *;
+
+.card {
+  display: flex;
+  align-items: center;
+  gap: $space-16;
+  padding: $space-16;
+  border-radius: $radius-16;
+  background: $color-surface-1;
+}
+
+.card--dragging {
+  border: 1px solid $color-primary;
+  box-shadow: $shadow;
+  opacity: 0.95;
+}
+
+.card__main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: $space-16;
+  padding: 0;
+  border: none;
+  background: transparent;
+  text-align: left;
+  color: inherit;
+  cursor: pointer;
+}
+
+.card__main--static {
+  cursor: default;
+}
+
+.card__media {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 76px;
+  height: 76px;
+  border-radius: $radius-16;
+  object-fit: cover;
+  background: $color-surface-2;
+  font-size: 34px;
+}
+
+.card__info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: $space-8;
+}
+
+.card__title {
+  font-family: $font-family;
+  font-size: $font-18;
+  font-weight: $weight-bold;
+  color: $color-text;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.card__subtitle {
+  font-family: $font-family;
+  font-size: $font-14;
+  color: $color-text-muted;
+}
+
+.card__stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-8;
+}
+
+.card__stat {
+  padding: 4px $space-12;
+  border-radius: $radius-pill;
+  background: rgba($color-primary, 0.12);
+  font-family: $font-family;
+  font-size: $font-14;
+  font-weight: $weight-medium;
+  color: $color-primary;
+}
+
+.card__chev {
+  flex-shrink: 0;
+  font-size: 22px;
+  color: $color-text-muted;
+}
+
+.card__add {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: $radius-pill;
+  background: $color-primary;
+  color: $color-on-primary;
+  cursor: pointer;
+
+  &:active { transform: scale(0.96); }
+}
+
+.card__action {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: transparent;
+  color: $color-text-muted;
+  cursor: pointer;
+}
+
+.card__drag {
+  flex-shrink: 0;
+  border: none;
+  background: transparent;
+  color: $color-text-muted;
+  font-size: 20px;
+  line-height: 1;
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+
+  &:active { cursor: grabbing; }
+}
