@@ -17,10 +17,19 @@ function primeiraFoto(exercicios = []) {
   return ordenados.find((e) => e.foto_url)?.foto_url ?? null
 }
 
+function proximoTreino(rotinas, ultimoTreino) {
+  if (rotinas.length === 0) return -1
+  if (!ultimoTreino) return 0
+  const idx = rotinas.findIndex((r) => r.id === ultimoTreino)
+  if (idx === -1) return 0
+  return (idx + 1) % rotinas.length
+}
+
 export default function Rotinas() {
   const { user } = useAuth()
   const navigate = useNavigate()
   const [rotinas, setRotinas] = useState([])
+  const [ultimoTreino, setUltimoTreino] = useState(null)
   const [carregando, setCarregando] = useState(true)
   const [erro, setErro] = useState('')
   const [modalView, setModalView] = useState(null)
@@ -37,9 +46,21 @@ export default function Rotinas() {
     const { data, error } = await supabase
       .from('rotinas')
       .select('id, nome, created_at, exercicios(foto_url, posicao, created_at)')
+      .order('created_at', { ascending: true })
+    if (error) {
+      setErro(error.message)
+      setCarregando(false)
+      return
+    }
+    setRotinas(data ?? [])
+
+    const { data: ultima } = await supabase
+      .from('sessions')
+      .select('routine_id')
       .order('created_at', { ascending: false })
-    if (error) setErro(error.message)
-    else setRotinas(data ?? [])
+      .limit(1)
+      .maybeSingle()
+    setUltimoTreino(ultima?.routine_id ?? null)
     setCarregando(false)
   }
 
@@ -67,8 +88,9 @@ export default function Rotinas() {
     carregar()
   }
 
-  const destaque = rotinas[0]
-  const restantes = rotinas.slice(1)
+  const indiceDestaque = proximoTreino(rotinas, ultimoTreino)
+  const destaque = rotinas[indiceDestaque] ?? null
+  const restantes = rotinas.filter((_, i) => i !== indiceDestaque)
   const tituloModal = modalView === 'importar' ? 'Montar com IA' : editando ? 'Editar rotina' : 'Nova rotina'
 
   return (
