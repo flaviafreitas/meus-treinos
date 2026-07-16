@@ -48,8 +48,6 @@ input, textarea {
 }
 
 /* ---------- Formulários ---------- */
-.form { display: flex; flex-direction: column; gap: 14px; }
-
 .campo {
   display: flex;
   flex-direction: column;
@@ -69,12 +67,6 @@ input, textarea {
     &:focus { border-color: $primaria; }
     &::placeholder { color: rgba($texto-fraco, 0.6); }
   }
-}
-
-.campo-linha {
-  display: flex;
-  gap: 12px;
-  .campo { flex: 1; }
 }
 
 /* ---------- Importar treino com IA ---------- */
@@ -115,31 +107,6 @@ input, textarea {
     white-space: pre-wrap;
     word-break: break-word;
   }
-}
-
-/* ---------- Upload de foto ---------- */
-.foto-upload {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-
-  &__preview, &__vazio {
-    width: 130px;
-    height: 130px;
-    border-radius: $raio;
-    object-fit: cover;
-    background: $fundo;
-    border: 1px dashed $borda;
-  }
-  &__vazio {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: $texto-fraco;
-    font-size: 13px;
-  }
-  label { cursor: pointer; }
 }
 
 /* ---------- Carregando ---------- */

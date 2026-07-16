@@ -411,79 +411,79 @@ export default function Rotina() {
             </button>
           </div>
         ) : (
-          <form onSubmit={salvar} className="form">
+          <form onSubmit={salvar} className="ex-form">
             {!editando && (
-              <button
-                type="button"
-                className="btn btn--outline btn--small btn--auto voltar-bib"
-                onClick={() => setEtapa('escolher')}
-              >
-                ← Escolher da biblioteca
+              <button type="button" className="ex-form__back" onClick={() => setEtapa('escolher')}>
+                <IconVoltar /> Escolher da biblioteca
               </button>
             )}
 
-            <div className="foto-upload">
-            {previewFoto ? (
-              <img src={previewFoto} alt="Prévia" className="foto-upload__preview" />
-            ) : (
-              <div className="foto-upload__vazio">Sem foto</div>
-            )}
-            <label className="btn btn--outline btn--small btn--auto">
-              {previewFoto ? 'Trocar foto' : 'Adicionar foto'}
+            <div className="ex-form__photo">
+              {previewFoto ? (
+                <img src={previewFoto} alt="" className="ex-form__img" />
+              ) : (
+                <div className="ex-form__img ex-form__img--empty">💪</div>
+              )}
+              <label className="ex-form__photo-btn">
+                {previewFoto ? 'Trocar foto' : 'Adicionar foto'}
+                <input
+                  type="file"
+                  accept="image/*"
+                  capture="environment"
+                  onChange={escolherFoto}
+                  hidden
+                />
+              </label>
+            </div>
+
+            <label className="field">
+              <span className="field__label">Exercício</span>
               <input
-                type="file"
-                accept="image/*"
-                capture="environment"
-                onChange={escolherFoto}
-                hidden
+                className="input"
+                value={form.nome}
+                onChange={(e) => setForm({ ...form, nome: e.target.value })}
+                placeholder="Ex: Supino reto com barra"
+                autoFocus
+                required
               />
             </label>
-          </div>
 
-          <label className="campo">
-            <span>Exercício</span>
-            <input
-              value={form.nome}
-              onChange={(e) => setForm({ ...form, nome: e.target.value })}
-              placeholder="Ex: Supino reto"
-              autoFocus
-              required
-            />
-          </label>
+            <div className="field-row">
+              <label className="field">
+                <span className="field__label">Séries</span>
+                <input
+                  className="input"
+                  type="number"
+                  inputMode="numeric"
+                  min="0"
+                  value={form.series}
+                  onChange={(e) => setForm({ ...form, series: e.target.value })}
+                  placeholder="Ex: 4"
+                />
+              </label>
+              <label className="field">
+                <span className="field__label">Repetições</span>
+                <input
+                  className="input"
+                  value={form.repeticoes}
+                  onChange={(e) => setForm({ ...form, repeticoes: e.target.value })}
+                  placeholder="Ex: 8-12"
+                />
+              </label>
+            </div>
 
-          <div className="campo-linha">
-            <label className="campo">
-              <span>Séries</span>
-              <input
-                type="number"
-                inputMode="numeric"
-                min="0"
-                value={form.series}
-                onChange={(e) => setForm({ ...form, series: e.target.value })}
-                placeholder="Ex: 4"
+            <label className="field">
+              <span className="field__label">Observações</span>
+              <textarea
+                className="textarea"
+                rows={3}
+                value={form.observacoes}
+                onChange={(e) => setForm({ ...form, observacoes: e.target.value })}
+                placeholder="Ex: descanso de 90s, foco na fase negativa…"
               />
             </label>
-            <label className="campo">
-              <span>Repetições</span>
-              <input
-                value={form.repeticoes}
-                onChange={(e) => setForm({ ...form, repeticoes: e.target.value })}
-                placeholder="Ex: 8-12"
-              />
-            </label>
-          </div>
 
-          <label className="campo">
-            <span>Observações</span>
-            <textarea
-              rows={3}
-              value={form.observacoes}
-              onChange={(e) => setForm({ ...form, observacoes: e.target.value })}
-              placeholder="Ex: descanso de 60s, foco na fase negativa…"
-            />
-          </label>
-
-          {erro && <p className="alerta alerta--erro">{erro}</p>}
+            {erro && <p className="alerta alerta--erro">{erro}</p>}
 
             <button type="submit" className="btn btn--primary" disabled={salvando}>
               {salvando ? 'Salvando…' : 'Salvar exercício'}
