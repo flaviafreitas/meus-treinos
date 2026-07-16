@@ -1,0 +1,113 @@
+@use 'variables' as *;
+
+.picker {
+  display: flex;
+  flex-direction: column;
+  gap: $space-16;
+}
+
+.picker__filters {
+  display: flex;
+  gap: $space-8;
+  overflow-x: auto;
+  padding-bottom: 2px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.picker__filter {
+  flex: 0 0 auto;
+  border: 1px solid $color-border;
+  background: $color-surface-2;
+  color: $color-text-muted;
+  border-radius: $radius-pill;
+  padding: 8px $space-16;
+  font-family: $font-family;
+  font-size: $font-14;
+  font-weight: $weight-medium;
+  cursor: pointer;
+}
+
+.picker__filter--active {
+  background: $color-primary;
+  border-color: $color-primary;
+  color: $color-on-primary;
+  font-weight: $weight-bold;
+}
+
+.picker__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: $space-12;
+  max-height: 52vh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.picker__item {
+  display: flex;
+  align-items: center;
+  gap: $space-12;
+  padding: $space-12;
+  border-radius: $radius-16;
+  background: $color-surface-1;
+}
+
+.picker__thumb {
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  border-radius: $radius-12;
+  object-fit: cover;
+  background: $color-surface-2;
+}
+
+.picker__info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: $space-4;
+}
+
+.picker__name {
+  font-family: $font-family;
+  font-size: $font-16;
+  font-weight: $weight-bold;
+  color: $color-text;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.picker__group {
+  font-family: $font-family;
+  font-size: $font-14;
+  color: $color-text-muted;
+}
+
+.picker__add {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: $radius-pill;
+  background: $color-primary;
+  color: $color-on-primary;
+  cursor: pointer;
+
+  &:active { transform: scale(0.96); }
+}
+
+.picker__empty {
+  font-family: $font-family;
+  font-size: $font-14;
+  color: $color-text-muted;
+  text-align: center;
+  padding: $space-16;
+}
