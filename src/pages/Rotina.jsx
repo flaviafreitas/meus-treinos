@@ -7,6 +7,7 @@ import BibliotecaExercicios from '../components/BibliotecaExercicios'
 import ExercicioDetalhe from '../components/ExercicioDetalhe'
 import TabBar from '../components/TabBar'
 import Card from '../components/Card'
+import SkeletonCard from '../components/SkeletonCard'
 
 const FORM_VAZIO = { nome: '', series: '', repeticoes: '', observacoes: '' }
 
@@ -320,7 +321,13 @@ export default function Rotina() {
         <span className="detail__tag">{exercicios.length} exercícios</span>
       </div>
 
-      {carregando && <p className="detail__empty">Carregando…</p>}
+      {carregando && (
+        <ul className="detail__list">
+          <li><SkeletonCard /></li>
+          <li><SkeletonCard /></li>
+          <li><SkeletonCard /></li>
+        </ul>
+      )}
       {erro && <p className="alerta alerta--erro">{erro}</p>}
       {!carregando && exercicios.length === 0 && !erro && (
         <p className="detail__empty">Nenhum exercício ainda. Toque em “Adicionar exercício”.</p>

@@ -6,6 +6,8 @@ import Modal from '../components/Modal'
 import ImportarTreino from '../components/ImportarTreino'
 import TabBar from '../components/TabBar'
 import Card from '../components/Card'
+import SkeletonCard from '../components/SkeletonCard'
+import Skeleton from 'react-loading-skeleton'
 
 function primeiraFoto(exercicios = []) {
   const ordenados = [...exercicios].sort((a, b) => {
@@ -114,7 +116,16 @@ export default function Rotinas() {
         <h2 className="home__section-title">Meus treinos</h2>
       </div>
 
-      {carregando && <p className="home__empty">Carregando…</p>}
+      {carregando && (
+        <>
+          <Skeleton height={200} borderRadius={16} />
+          <ul className="home__list">
+            <li><SkeletonCard /></li>
+            <li><SkeletonCard /></li>
+            <li><SkeletonCard /></li>
+          </ul>
+        </>
+      )}
       {erro && <p className="alerta alerta--erro">{erro}</p>}
 
       {!carregando && !erro && rotinas.length === 0 && (
