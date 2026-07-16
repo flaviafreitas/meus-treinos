@@ -97,6 +97,17 @@
   border-radius: $radius-pill;
   background: $color-primary;
   color: $color-on-primary;
+  animation: done-pop 0.4s ease both;
+}
+
+@keyframes done-pop {
+  0% { transform: scale(0); }
+  60% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .done__check { animation: none; }
 }
 
 .done__title {
