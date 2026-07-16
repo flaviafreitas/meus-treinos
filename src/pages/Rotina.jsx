@@ -404,17 +404,10 @@ export default function Rotina() {
         onFechar={() => setModalAberto(false)}
       >
         {etapa === 'escolher' ? (
-          <div className="escolher-ex">
+          <div className="picker">
             <BibliotecaExercicios onEscolher={escolherDaBiblioteca} />
-            <div className="escolher-ex__ou">
-              <span>não achou? </span>
-            </div>
-            <button
-              type="button"
-              className="btn btn--outline escolher-ex__criar"
-              onClick={criarDoZero}
-            >
-              ✏️ Criar exercício do zero
+            <button type="button" className="btn btn--outline" onClick={criarDoZero}>
+              <IconEditar /> Criar exercício do zero
             </button>
           </div>
         ) : (
