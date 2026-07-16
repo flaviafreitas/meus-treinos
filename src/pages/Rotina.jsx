@@ -235,7 +235,7 @@ export default function Rotina() {
   }
 
   function iniciarTreino() {
-    if (exercicios.length) setVerEx(exercicios[0])
+    if (exercicios.length) navigate(`/workout/${id}`)
   }
 
   // ---- Reordenar exercícios (arrastar e soltar) ----

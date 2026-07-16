@@ -5,6 +5,7 @@ import Cadastro from './pages/Cadastro'
 import EsqueceuSenha from './pages/EsqueceuSenha'
 import Rotinas from './pages/Rotinas'
 import Rotina from './pages/Rotina'
+import Workout from './pages/Workout'
 
 function Protegido({ children }) {
   const { session, loading } = useAuth()
@@ -49,6 +50,14 @@ export default function App() {
         element={
           <Protegido>
             <Rotina />
+          </Protegido>
+        }
+      />
+      <Route
+        path="/workout/:id"
+        element={
+          <Protegido>
+            <Workout />
           </Protegido>
         }
       />
