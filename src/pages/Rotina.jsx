@@ -6,6 +6,7 @@ import Modal from '../components/Modal'
 import BibliotecaExercicios from '../components/BibliotecaExercicios'
 import ExercicioDetalhe from '../components/ExercicioDetalhe'
 import TabBar from '../components/TabBar'
+import Card from '../components/Card'
 
 const FORM_VAZIO = { nome: '', series: '', repeticoes: '', observacoes: '' }
 
@@ -327,47 +328,44 @@ export default function Rotina() {
 
       <ul className="detail__list">
         {exercicios.map((ex) => (
-          <li
-            key={ex.id}
-            ref={(el) => {
-              itemRefs.current[ex.id] = el
-            }}
-            className={`exercise-card${arrastandoId === ex.id ? ' exercise-card--dragging' : ''}`}
-          >
-            {modoEdicao && (
-              <button
-                type="button"
-                className="exercise-card__drag"
-                aria-label="Reordenar exercício"
-                onPointerDown={(e) => aoPegar(e, ex)}
-                onPointerMove={aoMover}
-                onPointerUp={aoSoltar}
-                onPointerCancel={aoSoltar}
-              >
-                ⠿
-              </button>
-            )}
-            <button type="button" className="exercise-card__open" onClick={() => setVerEx(ex)}>
-              {ex.foto_url ? (
-                <img className="exercise-card__thumb" src={ex.foto_url} alt="" loading="lazy" />
-              ) : (
-                <span className="exercise-card__thumb exercise-card__thumb--empty">💪</span>
-              )}
-              <span className="exercise-card__info">
-                <span className="exercise-card__name">{ex.nome}</span>
-                {(ex.series || ex.repeticoes) && (
-                  <span className="exercise-card__stats">
-                    {ex.series ? <span className="exercise-card__stat">{ex.series} séries</span> : null}
-                    {ex.repeticoes ? <span className="exercise-card__stat">{ex.repeticoes} reps</span> : null}
-                  </span>
-                )}
-              </span>
-            </button>
-            {modoEdicao && (
-              <button type="button" className="exercise-card__delete" onClick={() => excluir(ex)} aria-label="Excluir exercício">
-                <IconLixeira />
-              </button>
-            )}
+          <li key={ex.id}>
+            <Card
+              innerRef={(el) => { itemRefs.current[ex.id] = el }}
+              dragging={arrastandoId === ex.id}
+              image={ex.foto_url}
+              title={ex.nome}
+              subtitle={
+                (ex.series || ex.repeticoes) ? (
+                  <div className="card__stats">
+                    {ex.series ? <span className="card__stat">{ex.series} séries</span> : null}
+                    {ex.repeticoes ? <span className="card__stat">{ex.repeticoes} reps</span> : null}
+                  </div>
+                ) : null
+              }
+              onClick={() => setVerEx(ex)}
+              leading={
+                modoEdicao ? (
+                  <button
+                    type="button"
+                    className="card__drag"
+                    aria-label="Reordenar exercício"
+                    onPointerDown={(e) => aoPegar(e, ex)}
+                    onPointerMove={aoMover}
+                    onPointerUp={aoSoltar}
+                    onPointerCancel={aoSoltar}
+                  >
+                    ⠿
+                  </button>
+                ) : null
+              }
+              trailing={
+                modoEdicao ? (
+                  <button type="button" className="card__action" onClick={() => excluir(ex)} aria-label="Excluir exercício">
+                    <IconLixeira />
+                  </button>
+                ) : null
+              }
+            />
           </li>
         ))}
       </ul>
