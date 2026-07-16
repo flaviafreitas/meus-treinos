@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { supabase } from '../supabaseClient'
 import { useAuth } from '../context/AuthContext'
 import Modal from '../components/Modal'
@@ -17,7 +17,8 @@ function primeiraFoto(exercicios = []) {
 }
 
 export default function Rotinas() {
-  const { user, signOut } = useAuth()
+  const { user } = useAuth()
+  const navigate = useNavigate()
   const [rotinas, setRotinas] = useState([])
   const [carregando, setCarregando] = useState(true)
   const [erro, setErro] = useState('')
@@ -79,8 +80,8 @@ export default function Rotinas() {
         <button
           type="button"
           className="home__avatar"
-          onClick={() => { if (confirm('Sair da conta?')) signOut() }}
-          aria-label="Sair"
+          onClick={() => navigate('/perfil')}
+          aria-label="Perfil"
         >
           {inicial}
         </button>
