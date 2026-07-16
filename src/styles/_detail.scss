@@ -29,6 +29,9 @@
   background: transparent;
   color: $color-text-muted;
   cursor: pointer;
+  transition: color 0.15s ease;
+
+  &:hover { color: $color-text; }
 }
 
 .detail__done {
@@ -41,6 +44,7 @@
   font-weight: $weight-bold;
   cursor: pointer;
 
+  &:hover:not(:disabled) { filter: brightness(1.15); }
   &:disabled { opacity: 0.5; }
 }
 
@@ -116,6 +120,8 @@
   font-size: $font-14;
   font-weight: $weight-medium;
   cursor: pointer;
+
+  &:hover { filter: brightness(1.1); }
 }
 
 .detail__ver-editar {

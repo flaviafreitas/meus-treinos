@@ -25,6 +25,12 @@
   font-size: $font-14;
   font-weight: $weight-medium;
   cursor: pointer;
+  transition: border-color 0.15s ease, color 0.15s ease;
+
+  &:not(.picker__filter--active):hover {
+    border-color: $color-text-muted;
+    color: $color-text;
+  }
 }
 
 .picker__filter--active {

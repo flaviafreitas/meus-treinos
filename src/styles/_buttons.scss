@@ -51,6 +51,8 @@
   background: transparent;
   color: $color-primary;
   font-size: $font-16;
+
+  &:hover:not(:disabled) { filter: brightness(1.15); }
 }
 
 .btn--small {

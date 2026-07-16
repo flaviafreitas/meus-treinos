@@ -26,6 +26,8 @@ export default function Card({
     </>
   )
 
+  const clickable = Boolean(to || onClick)
+
   let main
   if (to) {
     main = <Link to={to} className="card__main">{inner}</Link>
@@ -36,7 +38,10 @@ export default function Card({
   }
 
   return (
-    <div className={`card${dragging ? ' card--dragging' : ''}`} ref={innerRef}>
+    <div
+      className={`card${clickable ? ' card--clickable' : ''}${dragging ? ' card--dragging' : ''}`}
+      ref={innerRef}
+    >
       {leading}
       {main}
       {trailing}
