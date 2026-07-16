@@ -7,6 +7,7 @@ import ImportarTreino from '../components/ImportarTreino'
 import TabBar from '../components/TabBar'
 import Card from '../components/Card'
 import SkeletonCard from '../components/SkeletonCard'
+import EmptyState from '../components/EmptyState'
 import Skeleton from 'react-loading-skeleton'
 
 function primeiraFoto(exercicios = []) {
@@ -129,7 +130,7 @@ export default function Rotinas() {
       {erro && <p className="alerta alerta--erro">{erro}</p>}
 
       {!carregando && !erro && rotinas.length === 0 && (
-        <p className="home__empty">Você ainda não tem rotinas. Toque em “Nova rotina” pra começar.</p>
+        <EmptyState>Você ainda não tem treinos. Toque em “Nova rotina” pra começar.</EmptyState>
       )}
 
       {destaque && (

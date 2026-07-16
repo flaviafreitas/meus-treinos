@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react'
 import Skeleton from 'react-loading-skeleton'
 import { supabase } from '../supabaseClient'
 import TabBar from '../components/TabBar'
+import EmptyState from '../components/EmptyState'
 
 const WEEK_LETTERS = ['S', 'T', 'Q', 'Q', 'S', 'S', 'D']
 
@@ -131,7 +132,7 @@ export default function Progress() {
           <div className="progress__block">
             <h2 className="progress__label">Histórico</h2>
             {history.length === 0 && !erro && (
-              <p className="progress__empty">Nenhum treino concluído ainda. Bora treinar!</p>
+              <EmptyState>Nenhum treino concluído ainda. Bora treinar!</EmptyState>
             )}
             {history.length > 0 && (
               <ul className="progress__history">
