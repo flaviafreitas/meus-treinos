@@ -1,0 +1,136 @@
+@use 'variables' as *;
+
+.profile {
+  min-height: 100%;
+  max-width: $screen-max;
+  margin: 0 auto;
+  padding: $space-20 $space-20 120px;
+  background: $color-bg;
+  display: flex;
+  flex-direction: column;
+  gap: $space-24;
+}
+
+.profile__title {
+  font-family: $font-family;
+  font-size: $font-28;
+  font-weight: $weight-bold;
+  line-height: $line-40;
+  color: $color-text;
+}
+
+.profile__card {
+  display: flex;
+  align-items: center;
+  gap: $space-16;
+  padding: $space-16;
+  border-radius: $radius-16;
+  background: $color-surface-1;
+}
+
+.profile__avatar {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: $radius-pill;
+  background: $color-primary;
+  color: $color-on-primary;
+  font-family: $font-family;
+  font-size: $font-20;
+  font-weight: $weight-bold;
+}
+
+.profile__info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: $space-4;
+}
+
+.profile__name {
+  font-family: $font-family;
+  font-size: $font-18;
+  font-weight: $weight-bold;
+  color: $color-text;
+}
+
+.profile__email {
+  font-family: $font-family;
+  font-size: $font-16;
+  color: $color-text-muted;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.profile__about {
+  border-radius: $radius-16;
+  background: $color-surface-1;
+  padding: 0 $space-16;
+}
+
+.profile__about-row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: $space-12;
+  padding: $space-16 0;
+  border: none;
+  background: transparent;
+  color: $color-text;
+  cursor: pointer;
+}
+
+.profile__about-icon {
+  flex-shrink: 0;
+  color: $color-text-muted;
+}
+
+.profile__about-label {
+  flex: 1;
+  text-align: left;
+  font-family: $font-family;
+  font-size: $font-16;
+  font-weight: $weight-medium;
+  color: $color-text;
+}
+
+.profile__about-chev {
+  flex-shrink: 0;
+  color: $color-text-muted;
+  transition: transform 0.2s ease;
+}
+
+.profile__about-chev--open {
+  transform: rotate(180deg);
+}
+
+.profile__about-content {
+  display: flex;
+  flex-direction: column;
+  gap: $space-12;
+  padding: $space-12 0 $space-16;
+  border-top: 1px solid $color-border;
+}
+
+.profile__about-text {
+  font-family: $font-family;
+  font-size: $font-16;
+  line-height: 1.5;
+  color: $color-text-muted;
+}
+
+.profile__about-version {
+  font-family: $font-family;
+  font-size: $font-14;
+  font-weight: $weight-medium;
+  color: $color-text-muted;
+}
+
+.profile__logout {
+  margin-top: auto;
+}
