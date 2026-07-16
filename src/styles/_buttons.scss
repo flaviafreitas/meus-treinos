@@ -36,6 +36,14 @@
   &:hover:not(:disabled) { border-color: $color-text-muted; }
 }
 
+.btn--outline-primary {
+  background: transparent;
+  border: 1px solid $color-primary;
+  color: $color-primary;
+
+  &:hover:not(:disabled) { background: rgba($color-primary, 0.08); }
+}
+
 .btn--text {
   width: auto;
   height: auto;
