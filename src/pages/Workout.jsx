@@ -115,17 +115,19 @@ export default function Workout() {
     const sets = exercises.reduce((sum, ex) => sum + (Number(ex.series) || 0), 0)
     return (
       <div className="done">
-        <span className="done__check"><IconCheck /></span>
-        <h1 className="done__title">Treino concluído!</h1>
-        <p className="done__subtitle">Boa, {firstName}! Mais um treino na conta.</p>
-        <div className="done__stats">
-          <div className="done__stat">
-            <span className="done__stat-value">{total}</span>
-            <span className="done__stat-label">exercícios</span>
-          </div>
-          <div className="done__stat">
-            <span className="done__stat-value">{sets}</span>
-            <span className="done__stat-label">séries</span>
+        <div className="done__main">
+          <span className="done__check"><IconCheck /></span>
+          <h1 className="done__title">Treino concluído!</h1>
+          <p className="done__subtitle">Boa, {firstName}! Mais um treino na conta.</p>
+          <div className="done__stats">
+            <div className="done__stat">
+              <span className="done__stat-value">{total}</span>
+              <span className="done__stat-label">exercícios</span>
+            </div>
+            <div className="done__stat">
+              <span className="done__stat-value">{sets}</span>
+              <span className="done__stat-label">séries</span>
+            </div>
           </div>
         </div>
         <div className="done__footer">

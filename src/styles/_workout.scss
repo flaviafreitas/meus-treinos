@@ -77,6 +77,12 @@
   background: $color-bg;
   display: flex;
   flex-direction: column;
+}
+
+.done__main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: $space-24;
@@ -140,7 +146,6 @@
 }
 
 .done__footer {
-  margin-top: auto;
   width: 100%;
   padding-top: $space-16;
 }
