@@ -1,13 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
-  <rect width="512" height="512" rx="112" fill="#0f172a"/>
-  <g fill="none" stroke="#22d3ee" stroke-width="26" stroke-linecap="round" stroke-linejoin="round">
-    <!-- barra -->
-    <line x1="150" y1="256" x2="362" y2="256"/>
-    <!-- anilhas esquerda -->
-    <rect x="96" y="196" width="34" height="120" rx="12" fill="#22d3ee" stroke="none"/>
-    <rect x="132" y="216" width="26" height="80" rx="10" fill="#38bdf8" stroke="none"/>
-    <!-- anilhas direita -->
-    <rect x="382" y="196" width="34" height="120" rx="12" fill="#22d3ee" stroke="none"/>
-    <rect x="354" y="216" width="26" height="80" rx="10" fill="#38bdf8" stroke="none"/>
+  <rect width="512" height="512" rx="112" fill="#ff6a2b"/>
+  <g fill="#ffffff">
+    <rect x="160" y="238" width="192" height="36" rx="18"/>
+    <rect x="96" y="188" width="40" height="136" rx="14"/>
+    <rect x="140" y="210" width="28" height="92" rx="12"/>
+    <rect x="376" y="188" width="40" height="136" rx="14"/>
+    <rect x="344" y="210" width="28" height="92" rx="12"/>
   </g>
 </svg>
