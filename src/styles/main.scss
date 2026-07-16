@@ -1,4 +1,4 @@
-@use 'variaveis' as *;
+@use 'variables' as *;
 @use 'fonts';
 @use 'buttons';
 @use 'forms';
@@ -14,16 +14,15 @@
 @use 'import';
 @use 'modal';
 
-/* ---------- Base ---------- */
 * { box-sizing: border-box; }
 
 html, body, #root { height: 100%; }
 
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-  background: $fundo;
-  color: $texto;
+  font-family: $font-family;
+  background: $color-bg;
+  color: $color-text;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -35,34 +34,34 @@ button { font-family: inherit; cursor: pointer; }
 
 input, textarea {
   font-family: inherit;
-  font-size: 16px; // evita zoom automático no iOS
+  font-size: 16px;
 }
 
-/* ---------- Alertas ---------- */
 .alerta {
-  border-radius: $raio-sm;
+  border-radius: $radius-12;
   padding: 10px 12px;
-  font-size: 14px;
+  font-family: $font-family;
+  font-size: $font-14;
 
-  &--erro { background: rgba($perigo, 0.15); color: $perigo; }
-  &--ok   { background: rgba($sucesso, 0.15); color: $sucesso; }
+  &--erro { background: rgba($color-danger, 0.15); color: $color-danger; }
+  &--ok   { background: rgba($color-success, 0.15); color: $color-success; }
 }
 
-/* ---------- Carregando ---------- */
 .tela-carregando {
   min-height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  color: $texto-fraco;
+  font-family: $font-family;
+  color: $color-text-muted;
 }
 
 .spinner {
   width: 18px;
   height: 18px;
-  border: 3px solid $fundo-3;
-  border-top-color: $primaria;
+  border: 3px solid $color-surface-2;
+  border-top-color: $color-primary;
   border-radius: 50%;
   animation: girar 0.7s linear infinite;
 }
