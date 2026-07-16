@@ -55,17 +55,17 @@
 .picker__item {
   display: flex;
   align-items: center;
-  gap: $space-12;
-  padding: $space-12;
+  gap: $space-16;
+  padding: $space-16;
   border-radius: $radius-16;
   background: $color-surface-1;
 }
 
 .picker__thumb {
   flex-shrink: 0;
-  width: 56px;
-  height: 56px;
-  border-radius: $radius-12;
+  width: 76px;
+  height: 76px;
+  border-radius: $radius-16;
   object-fit: cover;
   background: $color-surface-2;
 }
@@ -80,7 +80,7 @@
 
 .picker__name {
   font-family: $font-family;
-  font-size: $font-16;
+  font-size: $font-18;
   font-weight: $weight-bold;
   color: $color-text;
   overflow: hidden;
