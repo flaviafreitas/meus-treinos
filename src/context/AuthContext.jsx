@@ -6,6 +6,7 @@ const AuthContext = createContext(null)
 export function AuthProvider({ children }) {
   const [session, setSession] = useState(null)
   const [loading, setLoading] = useState(true)
+  const [recovery, setRecovery] = useState(false)
 
   useEffect(() => {
     // Recupera a sessão atual (se a pessoa já estava logada).
@@ -15,8 +16,9 @@ export function AuthProvider({ children }) {
     })
 
     // Ouve mudanças de login/logout.
-    const { data: sub } = supabase.auth.onAuthStateChange((_event, session) => {
+    const { data: sub } = supabase.auth.onAuthStateChange((event, session) => {
       setSession(session)
+      if (event === 'PASSWORD_RECOVERY') setRecovery(true)
     })
 
     return () => sub.subscription.unsubscribe()
@@ -26,6 +28,8 @@ export function AuthProvider({ children }) {
     session,
     user: session?.user ?? null,
     loading,
+    recovery,
+    clearRecovery: () => setRecovery(false),
     signOut: () => supabase.auth.signOut(),
   }
 

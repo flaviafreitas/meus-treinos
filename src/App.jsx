@@ -8,6 +8,7 @@ import Rotina from './pages/Rotina'
 import Workout from './pages/Workout'
 import Progress from './pages/Progress'
 import Profile from './pages/Profile'
+import ResetPassword from './pages/ResetPassword'
 
 function Protegido({ children }) {
   const { session, loading } = useAuth()
@@ -23,7 +24,9 @@ function Protegido({ children }) {
 }
 
 export default function App() {
-  const { session } = useAuth()
+  const { session, recovery } = useAuth()
+
+  if (recovery) return <ResetPassword />
 
   return (
     <Routes>

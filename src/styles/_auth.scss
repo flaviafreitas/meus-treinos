@@ -79,8 +79,14 @@
 }
 
 .auth__link {
+  padding: 0;
+  border: none;
+  background: none;
+  font-family: $font-family;
+  font-size: inherit;
   color: $color-primary;
   font-weight: $weight-medium;
+  cursor: pointer;
 }
 
 .auth__feedback {
