@@ -5,6 +5,7 @@ import { useAuth } from '../context/AuthContext'
 import Modal from '../components/Modal'
 import ImportarTreino from '../components/ImportarTreino'
 import TabBar from '../components/TabBar'
+import Card from '../components/Card'
 
 function primeiraFoto(exercicios = []) {
   const ordenados = [...exercicios].sort((a, b) => {
@@ -120,25 +121,17 @@ export default function Rotinas() {
 
       {restantes.length > 0 && (
         <ul className="home__list">
-          {restantes.map((r) => {
-            const foto = primeiraFoto(r.exercicios)
-            return (
-              <li key={r.id}>
-                <Link to={`/rotina/${r.id}`} className="routine-card">
-                  {foto ? (
-                    <img className="routine-card__thumb" src={foto} alt="" loading="lazy" />
-                  ) : (
-                    <span className="routine-card__thumb routine-card__thumb--empty">💪</span>
-                  )}
-                  <div className="routine-card__info">
-                    <span className="routine-card__name">{r.nome}</span>
-                    <span className="routine-card__count">{r.exercicios.length} exercícios</span>
-                  </div>
-                  <span className="routine-card__chev" aria-hidden="true">›</span>
-                </Link>
-              </li>
-            )
-          })}
+          {restantes.map((r) => (
+            <li key={r.id}>
+              <Card
+                to={`/rotina/${r.id}`}
+                image={primeiraFoto(r.exercicios)}
+                title={r.nome}
+                subtitle={`${r.exercicios.length} exercícios`}
+                trailing={<span className="card__chev" aria-hidden="true">›</span>}
+              />
+            </li>
+          ))}
         </ul>
       )}
 
