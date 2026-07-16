@@ -8,14 +8,6 @@ function IconInicio() {
   )
 }
 
-function IconTreinos() {
-  return (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-      <path d="M4 9v6M7 7v10M17 7v10M20 9v6M7 12h10" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  )
-}
-
 function IconProgresso() {
   return (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -35,7 +27,6 @@ function IconPerfil() {
 
 const tabs = [
   { key: 'inicio', label: 'Início', to: '/', Icon: IconInicio },
-  { key: 'treinos', label: 'Treinos', to: '/', Icon: IconTreinos },
   { key: 'progresso', label: 'Progresso', to: '/progress', Icon: IconProgresso },
   { key: 'perfil', label: 'Perfil', to: '/perfil', Icon: IconPerfil },
 ]
